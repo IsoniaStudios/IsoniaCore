@@ -1,8 +1,16 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:CompileBindings="True">
-	
-    <ControlTheme x:Key="{x:Type Window}" TargetType="{x:Type Window}">
+
+	<Design.PreviewWith>
+		<Window Width="300" Height="300">
+		</Window>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type Window}" TargetType="{x:Type Window}">
+		<Setter Property="Background" Value="{StaticResource Background-0-SolidColorBrush}" />
+		<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+		<Setter Property="BorderBrush" Value="{StaticResource Fill-1-SolidColorBrush}" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="{x:Type Window}">
                 <Panel>

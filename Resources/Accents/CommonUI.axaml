@@ -1,0 +1,82 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<!-- Preview -->
+	<Design.PreviewWith>
+		<UniformGrid Columns="5">
+			<UniformGrid.Resources>
+				<ResourceDictionary>
+					<ResourceDictionary.MergedDictionaries>
+						<ControlTheme TargetType="{x:Type Canvas}">
+							<Setter Property="Height" Value="32"/>
+							<Setter Property="Width" Value="32"/>
+							<Setter Property="Margin" Value="4"/>
+						</ControlTheme>
+					</ResourceDictionary.MergedDictionaries>
+				</ResourceDictionary>
+			</UniformGrid.Resources>
+
+			<Canvas Background="{StaticResource Foreground-0-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Foreground-1-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Foreground-2-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Foreground-3-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Foreground-4-SolidBrushColor}"/>
+
+			<Canvas Background="{StaticResource Background-0-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Background-1-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Background-2-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Background-3-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Background-4-SolidBrushColor}"/>
+
+			<Canvas Background="{StaticResource Fill-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Fill-Pointerover-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Fill-Pressed-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Fill-Disabled-SolidBrushColor}"/>
+
+			<Canvas Background="{StaticResource Error-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Error-Pointerover-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Error-Pressed-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Error-Disabled-SolidBrushColor}"/>
+		</UniformGrid>
+	</Design.PreviewWith>
+
+	<!-- Foreground -->
+	<Color x:Key="Foreground-0-Color">#FFF9F9F9</Color>
+	<Color x:Key="Foreground-1-Color">#FFD3D3D3</Color>
+	<Color x:Key="Foreground-2-Color">#FFADADAD</Color>
+	<Color x:Key="Foreground-3-Color">#FF878787</Color>
+	<Color x:Key="Foreground-4-Color">#FF616161</Color>
+
+	<SolidColorBrush x:Key="Foreground-0-SolidColorBrush" Color="{StaticResource Foreground-0-Color}" />
+	<SolidColorBrush x:Key="Foreground-1-SolidColorBrush" Color="{StaticResource Foreground-1-Color}" />
+	<SolidColorBrush x:Key="Foreground-2-SolidColorBrush" Color="{StaticResource Foreground-2-Color}" />
+	<SolidColorBrush x:Key="Foreground-3-SolidColorBrush" Color="{StaticResource Foreground-3-Color}" />
+	<SolidColorBrush x:Key="Foreground-4-SolidColorBrush" Color="{StaticResource Foreground-4-Color}" />
+
+	<!-- Background -->
+	<Color x:Key="Background-0-Color">#FF16161A</Color>
+	<Color x:Key="Background-1-Color">#FF232429</Color>
+	<Color x:Key="Background-2-Pressed-Color">#FF35363C</Color>
+	<Color x:Key="Background-3-Disabled-Color">#FF43444A</Color>
+	<Color x:Key="Background-4-Disabled-Color">#FF4F5159</Color>
+
+	<SolidColorBrush x:Key="Background-0-SolidColorBrush" Color="{StaticResource Background-0-Color}" />
+	<SolidColorBrush x:Key="Background-1-SolidColorBrush" Color="{StaticResource Background-1-Color}" />
+	<SolidColorBrush x:Key="Background-2-SolidColorBrush" Color="{StaticResource Background-2-Color}" />
+	<SolidColorBrush x:Key="Background-3-SolidColorBrush" Color="{StaticResource Background-3-Color}" />
+	<SolidColorBrush x:Key="Background-4-SolidColorBrush" Color="{StaticResource Background-4-Color}" />
+
+	<!-- Fill -->
+	<Color x:Key="Fill-0-Color">#14FFFFFF</Color>
+	<Color x:Key="Fill-1-Color">#1FFFFFFF</Color>
+	<Color x:Key="Fill-2-Color">#29FFFFFF</Color>
+	<Color x:Key="Fill-3-Color">#33FFFFFF</Color>
+	<Color x:Key="Fill-4-Color">#3DFFFFFF</Color>
+
+	<SolidColorBrush x:Key="Fill-0-SolidColorBrush" Color="{StaticResource Fill-0-Color}" />
+	<SolidColorBrush x:Key="Fill-1-SolidColorBrush" Color="{StaticResource Fill-1-Color}" />
+	<SolidColorBrush x:Key="Fill-2-SolidColorBrush" Color="{StaticResource Fill-2-Color}" />
+	<SolidColorBrush x:Key="Fill-3-SolidColorBrush" Color="{StaticResource Fill-3-Color}" />
+	<SolidColorBrush x:Key="Fill-4-SolidColorBrush" Color="{StaticResource Fill-4-Color}" />
+
+</ResourceDictionary>

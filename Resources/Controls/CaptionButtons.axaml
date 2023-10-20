@@ -11,8 +11,9 @@
 
 	<ControlTheme x:Key="SimpleCaptionButton"
 				  TargetType="{x:Type Button}">
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="Foreground" Value="Black" />
+		<Setter Property="Background" Value="{StaticResource Fill-1-SolidColorBrush}" />
+		<Setter Property="BorderBrush" Value="{StaticResource Fill-2-SolidColorBrush}" />
+		<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
 		<Setter Property="Width" Value="45" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="Template">
@@ -25,10 +26,11 @@
 
 		<Style Selector="^:pointerover /template/ ContentPresenter">
 			<Setter Property="Background" Value="{TemplateBinding Background}" />
+			<Setter Property="Foreground" Value="Red" />
 		</Style>
 
 		<Style Selector="^:pressed /template/ ContentPresenter">
-			<Setter Property="Background" Value="#ffcacaca" />
+			<Setter Property="Background" Value="{TemplateBinding BorderBrush}" />
 		</Style>
 	</ControlTheme>
 
@@ -48,7 +50,7 @@
 								 Margin="2">
 							<Path Name="FullScreenButtonPath"
 								  Data="M2048 2048v-819h-205v469l-1493 -1493h469v-205h-819v819h205v-469l1493 1493h-469v205h819z"
-								  Fill="{TemplateBinding Foreground}"
+								  Fill="{StaticResource Foreground-1-SolidColorBrush}"
 								  Stretch="UniformToFill" />
 						</Viewbox>
 					</Button>
@@ -58,7 +60,7 @@
 						<Viewbox Width="11"
 								 Margin="2">
 							<Path Data="M2048 1229v-205h-2048v205h2048z"
-								  Fill="{TemplateBinding Foreground}"
+								  Fill="{StaticResource Foreground-1-SolidColorBrush}"
 								  Stretch="UniformToFill" />
 						</Viewbox>
 					</Button>
@@ -72,19 +74,19 @@
 							</Viewbox.RenderTransform>
 							<Path Name="RestoreButtonPath"
 								  Data="M2048 2048v-2048h-2048v2048h2048zM1843 1843h-1638v-1638h1638v1638z"
-								  Fill="{TemplateBinding Foreground}"
+								  Fill="{StaticResource Foreground-1-SolidColorBrush}"
 								  Stretch="UniformToFill" />
 						</Viewbox>
 					</Button>
 					<Button x:Name="PART_CloseButton"
-							Background="#ffe81123"
-							BorderBrush="#fff1707a"
+							Background="{StaticResource Error-Pointerover-SolidColorBrush}"
+							BorderBrush="{StaticResource Error-Pressed-SolidColorBrush}"
 							Theme="{StaticResource SimpleCaptionButton}"
 							AutomationProperties.Name="Close">
 						<Viewbox Width="11"
 								 Margin="2">
 							<Path Data="M1169 1024l879 -879l-145 -145l-879 879l-879 -879l-145 145l879 879l-879 879l145 145l879 -879l879 879l145 -145z"
-								  Fill="{TemplateBinding Foreground}"
+								  Fill="{StaticResource Foreground-1-SolidColorBrush}"
 								  Stretch="UniformToFill" />
 						</Viewbox>
 					</Button>
