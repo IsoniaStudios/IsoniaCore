@@ -1,0 +1,36 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- #region Color -->
+
+	<Color x:Key="AlertError-Color">#bf2012</Color>
+    <Color x:Key="AlertErrorAccent-Color">#CC2212</Color>
+
+    <Color x:Key="AlertWarning-Color">#f7d302</Color>
+    <Color x:Key="AlertWarningAccent-Color">#FFDD1C</Color>
+
+    <Color x:Key="AlertSuccess-Color">#47962d</Color>
+    <Color x:Key="AlertSuccessAccent-Color">#4EA331</Color>
+
+    <!-- #endregion -->
+
+    <!-- #region Color Brush -->
+
+    <SolidColorBrush x:Key="AlertError-SolidBrushColor"
+                     Color="{StaticResource AlertError-Color}" />
+    <SolidColorBrush x:Key="AlertErrorAccent-SolidBrushColor"
+                     Color="{StaticResource AlertErrorAccent-Color}" />
+
+    <SolidColorBrush x:Key="AlertWarning-SolidBrushColor"
+                     Color="{StaticResource AlertWarning-Color}" />
+    <SolidColorBrush x:Key="AlertWarningAccent-SolidBrushColor"
+                     Color="{StaticResource AlertWarningAccent-Color}" />
+
+    <SolidColorBrush x:Key="AlertSuccess-SolidBrushColor"
+                     Color="{StaticResource AlertSuccess-Color}" />
+    <SolidColorBrush x:Key="AlertSuccessAccent-SolidBrushColor"
+                     Color="{StaticResource AlertSuccessAccent-Color}" />
+
+    <!-- #endregion -->
+
+</ResourceDictionary>

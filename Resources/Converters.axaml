@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:Converters="clr-namespace:IsoniaCore.Resources.Converters;assembly=IsoniaCore"
+					x:CompileBindings="True">
+
+	<Converters:MathConverter x:Key="MathConverter" />
+	<Converters:BooleanInverterConverter x:Key="BooleanInverterConverter" />
+	<Converters:RandomColorConverter x:Key="RandomColorConverter" />
+	<Converters:KeyToPathConverter x:Key="KeyToPathConverter" />
+
+</ResourceDictionary>
