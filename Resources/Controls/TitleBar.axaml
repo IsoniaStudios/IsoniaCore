@@ -1,6 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    x:ClassModifier="internal">
+                    x:CompileBindings="True">
 	
 	<Design.PreviewWith>
 		<Panel Width="300" Height="32">
@@ -16,7 +16,8 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Panel HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-					   VerticalAlignment="Stretch">
+					   VerticalAlignment="Stretch"
+					   x:Name="PART_Main">
 					<Panel x:Name="PART_MouseTracker"
 						   Height="1"
 						   VerticalAlignment="Top" />

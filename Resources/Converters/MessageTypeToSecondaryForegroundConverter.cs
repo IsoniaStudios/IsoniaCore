@@ -12,11 +12,11 @@ public class MessageTypeToSecondaryForegroundConverter : IValueConverter
 
         return (MessageType?)value switch
         {
-            MessageType.Success => resources.Get("OrnamentalBorder-SolidBrushColor"),
-            MessageType.Error => resources.Get("OrnamentalBorder-SolidBrushColor"),
-            MessageType.Warning => resources.Get("BrandGray-SolidBrushColor-0"),
-            MessageType.Information => resources.Get("OrnamentalBorder-SolidBrushColor"),
-            _ => resources.Get("OrnamentalBorder-SolidBrushColor")
+            MessageType.Success => resources.Get("OrnamentalBorder-SolidColorBrush"),
+            MessageType.Error => resources.Get("OrnamentalBorder-SolidColorBrush"),
+            MessageType.Warning => resources.Get("BrandGray-SolidColorBrush-0"),
+            MessageType.Information => resources.Get("OrnamentalBorder-SolidColorBrush"),
+            _ => resources.Get("OrnamentalBorder-SolidColorBrush")
         };
         */
         return null;

@@ -16,27 +16,23 @@
 				</ResourceDictionary>
 			</UniformGrid.Resources>
 
-			<Canvas Background="{StaticResource Foreground-0-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Foreground-1-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Foreground-2-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Foreground-3-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Foreground-4-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Foreground-0-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Foreground-1-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Foreground-2-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Foreground-3-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Foreground-4-SolidColorBrush}"/>
 
-			<Canvas Background="{StaticResource Background-0-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Background-1-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Background-2-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Background-3-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Background-4-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Background-0-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Background-1-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Background-2-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Background-3-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Background-4-SolidColorBrush}"/>
 
-			<Canvas Background="{StaticResource Fill-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Fill-Pointerover-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Fill-Pressed-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Fill-Disabled-SolidBrushColor}"/>
-
-			<Canvas Background="{StaticResource Error-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Error-Pointerover-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Error-Pressed-SolidBrushColor}"/>
-			<Canvas Background="{StaticResource Error-Disabled-SolidBrushColor}"/>
+			<Canvas Background="{StaticResource Fill-0-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Fill-1-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Fill-2-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Fill-3-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Fill-4-SolidColorBrush}"/>
 		</UniformGrid>
 	</Design.PreviewWith>
 

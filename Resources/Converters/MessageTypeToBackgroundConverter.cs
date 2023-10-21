@@ -12,11 +12,11 @@ public class MessageTypeToBackgroundConverter : IValueConverter
 
         return (MessageType?)value switch
         {
-            MessageType.Success => resources.Get("AlertSuccess-SolidBrushColor"),
-            MessageType.Error => resources.Get("AlertError-SolidBrushColor"),
-            MessageType.Warning => resources.Get("AlertWarning-SolidBrushColor"),
-            MessageType.Information => resources.Get("BlueAccent-SolidBrushColor"),
-            _ => resources.Get("BluePrimary-SolidBrushColor")
+            MessageType.Success => resources.Get("AlertSuccess-SolidColorBrush"),
+            MessageType.Error => resources.Get("AlertError-SolidColorBrush"),
+            MessageType.Warning => resources.Get("AlertWarning-SolidColorBrush"),
+            MessageType.Information => resources.Get("BlueAccent-SolidColorBrush"),
+            _ => resources.Get("BluePrimary-SolidColorBrush")
         };
         */
         return null;

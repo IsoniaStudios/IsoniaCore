@@ -31,6 +31,6 @@
                 </Panel>
             </ControlTemplate>
         </Setter>
-    </ControlTheme>
+	</ControlTheme>
 	
 </ResourceDictionary>
