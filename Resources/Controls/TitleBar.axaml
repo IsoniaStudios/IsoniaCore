@@ -1,13 +1,14 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:CompileBindings="True">
-	
+
+
 	<Design.PreviewWith>
-		<Panel Width="300" Height="32">
+		<Panel Width="512" Height="32">
 			<TitleBar />
 		</Panel>
 	</Design.PreviewWith>
-	
+
 	<ControlTheme x:Key="{x:Type TitleBar}"
 				  TargetType="{x:Type TitleBar}">
 		<Setter Property="VerticalAlignment" Value="Top" />

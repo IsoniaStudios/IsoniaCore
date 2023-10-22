@@ -3,8 +3,7 @@
                     x:CompileBindings="True">
 
 	<Design.PreviewWith>
-		<Window Width="300" Height="300">
-		</Window>
+		<Window Width="1024" Height="576" />
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type Window}" TargetType="{x:Type Window}">

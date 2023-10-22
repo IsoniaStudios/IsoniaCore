@@ -1,0 +1,78 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:CompileBindings="True">
+
+	<Design.PreviewWith>
+        <ListBox Margin="20" Height="300">
+            <ListBoxItem>Item 1</ListBoxItem>
+            <ListBoxItem>Item 2</ListBoxItem>
+			<ListBoxItem IsEnabled="False">Item 3</ListBoxItem>
+			<ListBoxItem IsEnabled="False" IsSelected="True">Item 4</ListBoxItem>
+            <ListBoxItem>Item 5</ListBoxItem>
+        </ListBox>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type ListBox}" TargetType="{x:Type ListBox}">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="ListBox.Template">
+            <ControlTemplate TargetType="{x:Type ListBox}">
+                <ScrollViewer Name="PART_ScrollViewer"
+                              AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                              HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                              IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                              VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+                    <ItemsPresenter Name="PART_ItemsPresenter"
+                                    Margin="{TemplateBinding Padding}"
+                                    ItemsPanel="{TemplateBinding ItemsPanel}" />
+                </ScrollViewer>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+	
+    <ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="{x:Type ListBoxItem}">
+		<Setter Property="ListBoxItem.Background" Value="Transparent" />
+		<Setter Property="ListBoxItem.Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
+		<Setter Property="ListBoxItem.Margin" Value="2" />
+		<Setter Property="ListBoxItem.Padding" Value="10" />
+        <Setter Property="ListBoxItem.CornerRadius" Value="8" />
+        <Setter Property="ListBoxItem.Template">
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                <ContentPresenter Name="PART_ContentPresenter"
+                                  Padding="{TemplateBinding Padding}"
+                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  VerticalContentAlignment="Center"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  Content="{TemplateBinding Content}"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                  CornerRadius="{TemplateBinding CornerRadius}"
+                                  Foreground="{TemplateBinding Foreground}" />
+            </ControlTemplate>
+        </Setter>
+
+        <!--  Pointerover State  -->
+        <Style Selector="^:pointerover">
+			<Setter Property="Cursor" Value="Hand" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+		</Style>
+
+        <!--  Pressed State  -->
+        <Style Selector="^:pressed">
+            <Setter Property="Background" Value="{StaticResource Fill-0-SolidColorBrush}" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+		</Style>
+
+        <!--  Selected State  -->
+        <Style Selector="^:selected">
+			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+			<Setter Property="Background" Value="{StaticResource Fill-0-SolidColorBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Cursor" Value="Hand" />
+			</Style>
+        </Style>
+    </ControlTheme>
+
+</ResourceDictionary>

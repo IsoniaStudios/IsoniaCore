@@ -23,5 +23,10 @@ namespace IsoniaCore.ViewModels
             get => isEnabled;
             set => OnPropertyChanged(ref isEnabled, value);
         }
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }

@@ -8,5 +8,8 @@
 	<Converters:RandomColorConverter x:Key="RandomColorConverter" />
 	<Converters:KeyToPathConverter x:Key="KeyToPathConverter" />
 	<Converters:VersionConverter x:Key="VersionConverter" />
-	
+
+	<Converters:TextToUpperConverter x:Key="TextToUpperConverter" />
+	<Converters:TextToLowerConverter x:Key="TextToLowerConverter" />
+
 </ResourceDictionary>

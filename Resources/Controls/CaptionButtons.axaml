@@ -3,11 +3,9 @@
                     x:CompileBindings="True">
 	
 	<Design.PreviewWith>
-		<Border Padding="20">
-			<StackPanel Spacing="20">
-				<CaptionButtons Height="32" />
-			</StackPanel>
-		</Border>
+		<Panel Margin="20">
+			<CaptionButtons Height="32" />
+		</Panel>
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="SimpleCaptionButton"

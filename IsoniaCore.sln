@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsoniaCore", "IsoniaCore.csproj", "{F68FD973-9B1B-44DA-AFD4-C85138F2CA4C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registry", "Registry\Registry.csproj", "{6A472632-6B96-4639-89F3-5A83EC1BBDB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F68FD973-9B1B-44DA-AFD4-C85138F2CA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F68FD973-9B1B-44DA-AFD4-C85138F2CA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F68FD973-9B1B-44DA-AFD4-C85138F2CA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A472632-6B96-4639-89F3-5A83EC1BBDB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A472632-6B96-4639-89F3-5A83EC1BBDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A472632-6B96-4639-89F3-5A83EC1BBDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A472632-6B96-4639-89F3-5A83EC1BBDB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
