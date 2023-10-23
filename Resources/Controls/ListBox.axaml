@@ -56,21 +56,23 @@
         <!--  Pointerover State  -->
         <Style Selector="^:pointerover">
 			<Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Background" Value="{StaticResource Fill-0-SolidColorBrush}" />
 			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
 		</Style>
 
         <!--  Pressed State  -->
         <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{StaticResource Fill-0-SolidColorBrush}" />
+            <Setter Property="Background" Value="{StaticResource Fill-1-SolidColorBrush}" />
 			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
 		</Style>
 
         <!--  Selected State  -->
         <Style Selector="^:selected">
+			<Setter Property="Background" Value="{StaticResource Fill-1-SolidColorBrush}" />
 			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
-			<Setter Property="Background" Value="{StaticResource Fill-0-SolidColorBrush}" />
 			<Style Selector="^:pointerover">
 				<Setter Property="Cursor" Value="Hand" />
+				<Setter Property="Background" Value="{StaticResource Fill-2-SolidColorBrush}" />
 			</Style>
         </Style>
     </ControlTheme>

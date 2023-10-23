@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
 
 	<!-- Preview -->
 	<Design.PreviewWith>
@@ -33,6 +34,8 @@
 			<Canvas Background="{StaticResource Fill-2-SolidColorBrush}"/>
 			<Canvas Background="{StaticResource Fill-3-SolidColorBrush}"/>
 			<Canvas Background="{StaticResource Fill-4-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Fill-5-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Fill-6-SolidColorBrush}"/>
 		</UniformGrid>
 	</Design.PreviewWith>
 
@@ -63,16 +66,20 @@
 	<SolidColorBrush x:Key="Background-4-SolidColorBrush" Color="{StaticResource Background-4-Color}" />
 
 	<!-- Fill -->
-	<Color x:Key="Fill-0-Color">#14FFFFFF</Color> <!-- 8% -->
-	<Color x:Key="Fill-1-Color">#1FFFFFFF</Color> <!-- 12% -->
-	<Color x:Key="Fill-2-Color">#29FFFFFF</Color> <!-- 16% -->
-	<Color x:Key="Fill-3-Color">#33FFFFFF</Color> <!-- 20% -->
-	<Color x:Key="Fill-4-Color">#3DFFFFFF</Color> <!-- 24% -->
+	<Color x:Key="Fill-0-Color">#0AFFFFFF</Color> <!-- 4% -->
+	<Color x:Key="Fill-1-Color">#14FFFFFF</Color> <!-- 8% -->
+	<Color x:Key="Fill-2-Color">#1FFFFFFF</Color> <!-- 12% -->
+	<Color x:Key="Fill-3-Color">#29FFFFFF</Color> <!-- 16% -->
+	<Color x:Key="Fill-4-Color">#33FFFFFF</Color> <!-- 20% -->
+	<Color x:Key="Fill-5-Color">#3DFFFFFF</Color> <!-- 24% -->
+	<Color x:Key="Fill-6-Color">#47FFFFFF</Color> <!-- 28% -->
 
 	<SolidColorBrush x:Key="Fill-0-SolidColorBrush" Color="{StaticResource Fill-0-Color}" />
 	<SolidColorBrush x:Key="Fill-1-SolidColorBrush" Color="{StaticResource Fill-1-Color}" />
 	<SolidColorBrush x:Key="Fill-2-SolidColorBrush" Color="{StaticResource Fill-2-Color}" />
 	<SolidColorBrush x:Key="Fill-3-SolidColorBrush" Color="{StaticResource Fill-3-Color}" />
 	<SolidColorBrush x:Key="Fill-4-SolidColorBrush" Color="{StaticResource Fill-4-Color}" />
+	<SolidColorBrush x:Key="Fill-5-SolidColorBrush" Color="{StaticResource Fill-5-Color}" />
+	<SolidColorBrush x:Key="Fill-6-SolidColorBrush" Color="{StaticResource Fill-6-Color}" />
 
 </ResourceDictionary>
