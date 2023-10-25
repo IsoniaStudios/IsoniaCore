@@ -1,6 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:Converters="clr-namespace:IsoniaCore.Resources.Converters;assembly=IsoniaCore"
+					xmlns:Converters="clr-namespace:IsoniaCore.Resources.Converters"
 					x:CompileBindings="True">
 
 	<Converters:MathConverter x:Key="MathConverter" />
@@ -8,6 +8,9 @@
 	<Converters:RandomColorConverter x:Key="RandomColorConverter" />
 	<Converters:KeyToPathConverter x:Key="KeyToPathConverter" />
 	<Converters:VersionConverter x:Key="VersionConverter" />
+
+	<Converters:NullToFalseConverter x:Key="NullToFalseConverter" />
+	<Converters:NullToTrueConverter x:Key="NullToTrueConverter" />
 
 	<Converters:TextToUpperConverter x:Key="TextToUpperConverter" />
 	<Converters:TextToLowerConverter x:Key="TextToLowerConverter" />

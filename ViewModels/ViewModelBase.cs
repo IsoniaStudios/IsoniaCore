@@ -1,4 +1,5 @@
 ﻿using IsoniaCore.DataTypes;
+using Avalonia.Media;
 
 namespace IsoniaCore.ViewModels
 {
@@ -7,6 +8,7 @@ namespace IsoniaCore.ViewModels
         private string title = string.Empty;
         private string subTitle = string.Empty;
         private bool isEnabled = true;
+        private StreamGeometry? icon = null;
 
         public string Title
         {
@@ -22,6 +24,11 @@ namespace IsoniaCore.ViewModels
         {
             get => isEnabled;
             set => OnPropertyChanged(ref isEnabled, value);
+        }
+        public StreamGeometry? Icon
+        {
+            get => icon;
+            set => OnPropertyChanged(ref icon, value);
         }
 
         public override string ToString()

@@ -3,8 +3,8 @@
 					x:CompileBindings="True">
 
 	<ResourceDictionary.MergedDictionaries>
-		<ResourceInclude Source="avares://IsoniaCore/Resources/Accents/Alerts.axaml" />
-		<ResourceInclude Source="avares://IsoniaCore/Resources/Accents/CommonUI.axaml" />
+		<ResourceInclude Source="avares://IsoniaCore/Resources/Icons/CommunicationIcons.axaml" />
+		<ResourceInclude Source="avares://IsoniaCore/Resources/Icons/NavigationIcons.axaml" />
 	</ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
