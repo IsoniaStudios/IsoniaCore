@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:CompileBindings="True">
 
-
 	<Design.PreviewWith>
 		<Panel Width="512" Height="32">
 			<TitleBar />
