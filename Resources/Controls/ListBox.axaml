@@ -35,7 +35,6 @@
 		<Setter Property="ListBoxItem.Background" Value="Transparent" />
 		<Setter Property="ListBoxItem.Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
 		<Setter Property="ListBoxItem.Margin" Value="2" />
-		<Setter Property="ListBoxItem.Padding" Value="10" />
         <Setter Property="ListBoxItem.CornerRadius" Value="8" />
         <Setter Property="ListBoxItem.Template">
             <ControlTemplate TargetType="{x:Type ListBoxItem}">

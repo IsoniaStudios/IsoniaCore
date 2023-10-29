@@ -5,7 +5,7 @@
 			 xmlns:local="clr-namespace:IsoniaCore.Resources.Controls"
 			 xmlns:viewModels="clr-namespace:IsoniaCore.ViewModels"
 
-			 mc:Ignorable="d" d:DesignWidth="144" d:DesignHeight="45"
+			 mc:Ignorable="d" d:DesignWidth="144"
 		
  			 x:Class="IsoniaCore.Resources.Controls.ViewModelBaseIdentifier"
 			 x:DataType="viewModels:ViewModelBase"
@@ -14,8 +14,8 @@
 	<StackPanel Orientation="Horizontal">
 		<PathIcon Data="{Binding Icon, Mode=OneTime}"
 				  IsVisible="{Binding Icon, Mode=OneTime, Converter={StaticResource NullToFalseConverter}}"
-				  Width="{Binding Path=$parent.Bounds.Height, RelativeSource={RelativeSource Self}}"/>
-		<TextBlock Text="{Binding Title, Mode=OneTime}" VerticalAlignment="Center" />
+				  Margin="8"/>
+		<TextBlock Theme="{StaticResource SubTitle}" Classes="H6" Text="{Binding Title, Mode=OneTime}" VerticalAlignment="Center" />
 	</StackPanel>
 
 </UserControl>

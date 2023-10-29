@@ -93,4 +93,33 @@
 			<Setter Property="FontSize" Value="12" />
 		</Style>
 	</ControlTheme>
+	<ControlTheme x:Key="SubTitle"
+                  BasedOn="{StaticResource Title}"
+                  TargetType="{x:Type TextBlock}">
+		<Setter Property="TextBlock.FontWeight" Value="500" />
+		<Style Selector="^.H1">
+			<Setter Property="FontSize" Value="28" />
+		</Style>
+		<Style Selector="^.H2">
+			<Setter Property="FontSize" Value="24" />
+		</Style>
+		<Style Selector="^.H3">
+			<Setter Property="FontSize" Value="20" />
+		</Style>
+		<Style Selector="^.H4">
+			<Setter Property="FontSize" Value="18" />
+		</Style>
+		<Style Selector="^.H5">
+			<Setter Property="FontSize" Value="16" />
+		</Style>
+		<Style Selector="^.H6">
+			<Setter Property="FontSize" Value="14" />
+		</Style>
+		<Style Selector="^.H7">
+			<Setter Property="FontSize" Value="12" />
+		</Style>
+		<Style Selector="^.H8">
+			<Setter Property="FontSize" Value="10" />
+		</Style>
+	</ControlTheme>
 </ResourceDictionary>

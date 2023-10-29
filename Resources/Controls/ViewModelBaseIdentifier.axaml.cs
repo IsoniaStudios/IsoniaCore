@@ -19,7 +19,7 @@ public partial class ViewModelBaseIdentifier : UserControl
     public ViewModelBaseIdentifier()
     {
         InitializeComponent();
-        this.SetDesignContext<ViewModelBasePreview>();
+        this.OverrideDesignContext<ViewModelBasePreview>();
     }
 #else
     public ViewModelBaseIdentifier()
