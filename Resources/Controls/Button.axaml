@@ -108,9 +108,9 @@
 
 	<!--  Button Light  -->
 	<ControlTheme x:Key="{x:Type Button}" TargetType="{x:Type Button}">
-		<Setter Property="Button.Background" Value="{StaticResource Fill-1-SolidColorBrush}" />
+		<Setter Property="Button.Background" Value="{StaticResource Fill-2-SolidColorBrush}" />
 		<Setter Property="Button.Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
-		<Setter Property="Button.BorderBrush" Value="{StaticResource Fill-1-SolidColorBrush}" />
+		<Setter Property="Button.BorderBrush" Value="{StaticResource Fill-2-SolidColorBrush}" />
 		<Setter Property="Button.BorderThickness" Value="1" />
 		<Setter Property="Button.CornerRadius" Value="5" />
 		<Setter Property="Button.Padding" Value="{StaticResource ButtonDefaultPadding}" />
@@ -162,14 +162,14 @@
 		</Style>
 
 		<Style Selector="^:pointerover">
-			<Setter Property="Background" Value="{StaticResource Fill-2-SolidColorBrush}" />
-			<Setter Property="BorderBrush" Value="{StaticResource Fill-2-SolidColorBrush}" />
+			<Setter Property="Background" Value="{StaticResource Fill-3-SolidColorBrush}" />
+			<Setter Property="BorderBrush" Value="{StaticResource Fill-3-SolidColorBrush}" />
 			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
 		</Style>
 
 		<Style Selector="^:pressed">
-			<Setter Property="BorderBrush" Value="{StaticResource Fill-3-SolidColorBrush}" />
-			<Setter Property="Background" Value="{StaticResource Fill-3-SolidColorBrush}" />
+			<Setter Property="BorderBrush" Value="{StaticResource Fill-4-SolidColorBrush}" />
+			<Setter Property="Background" Value="{StaticResource Fill-4-SolidColorBrush}" />
 			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
 		</Style>
 
@@ -197,7 +197,7 @@
 				  BasedOn="{StaticResource {x:Type Button}}"
 				  TargetType="{x:Type Button}">
 		<Setter Property="Button.Background" Value="Transparent" />
-		<Setter Property="Button.BorderBrush" Value="{StaticResource Fill-1-SolidColorBrush}" />
+		<Setter Property="Button.BorderBrush" Value="{StaticResource Fill-2-SolidColorBrush}" />
 		<Style Selector="^:disabled">
 			<Setter Property="BorderBrush" Value="Transparent" />
 			<Setter Property="Background" Value="Transparent" />

@@ -9,6 +9,9 @@
 	<Converters:KeyToPathConverter x:Key="KeyToPathConverter" />
 	<Converters:VersionConverter x:Key="VersionConverter" />
 
+	<Converters:TimeToStringConverter x:Key="TimeToStringConverter" />
+	<Converters:DateTimeToRelativeStringConverter x:Key="DateTimeToRelativeStringConverter" />
+
 	<Converters:NullToFalseConverter x:Key="NullToFalseConverter" />
 	<Converters:NullToTrueConverter x:Key="NullToTrueConverter" />
 
