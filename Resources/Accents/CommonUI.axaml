@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
+	<!-- Taken from https://semi.design/ and https://github.com/catppuccin/catppuccin -->
+
 	<!-- Preview -->
 	<Design.PreviewWith>
 		<UniformGrid Columns="5">

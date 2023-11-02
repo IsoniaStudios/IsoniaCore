@@ -11,6 +11,10 @@
 	<Thickness x:Key="ButtonDefaultPadding">12,6</Thickness>
 	<Thickness x:Key="ButtonSmallPadding">6,2</Thickness>
 
+	<Thickness x:Key="SquareButtonLargePadding">10</Thickness>
+	<Thickness x:Key="SquareButtonDefaultPadding">6</Thickness>
+	<Thickness x:Key="SquareButtonSmallPadding">2</Thickness>
+
 	<Thickness x:Key="ButtonBorderThickness">1</Thickness>
 
 	<CornerRadius x:Key="ButtonCornerRadius">5</CornerRadius>
@@ -179,6 +183,22 @@
 			<Setter Property="Foreground" Value="{StaticResource Foreground-3-SolidColorBrush}" />
 		</Style>
 
+		<Style Selector="^.Square">
+			<Setter Property="Padding" Value="{DynamicResource SquareButtonDefaultPadding}" />
+			<Style Selector="^.Large">
+				<Setter Property="Padding" Value="{DynamicResource SquareButtonLargePadding}" />
+				<Setter Property="FontSize" Value="{DynamicResource ButtonLargeFontSize}" />
+			</Style>
+			<Style Selector="^.Medium">
+				<Setter Property="Padding" Value="{DynamicResource SquareButtonDefaultPadding}" />
+				<Setter Property="FontSize" Value="{DynamicResource ButtonDefaultFontSize}" />
+			</Style>
+			<Style Selector="^.Small">
+				<Setter Property="Padding" Value="{DynamicResource SquareButtonSmallPadding}" />
+				<Setter Property="FontSize" Value="{DynamicResource ButtonSmallFontSize}" />
+			</Style>
+		</Style>
+		
 		<Style Selector="^.Large">
 			<Setter Property="Padding" Value="{DynamicResource ButtonLargePadding}" />
 			<Setter Property="FontSize" Value="{DynamicResource ButtonLargeFontSize}" />

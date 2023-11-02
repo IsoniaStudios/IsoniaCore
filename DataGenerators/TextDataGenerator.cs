@@ -2,8 +2,14 @@
 
 namespace IsoniaCore.DataGenerators;
 
-public sealed class TextDataGenerator : DataGenerator
+public static class TextDataGenerator
 {
+    private static readonly Random random;
+    static TextDataGenerator()
+    {
+        random = new();
+    }
+
     private static readonly string[] loremIpsumWords = {
         "lorem", "ipsum", "dolor", "sit", "amet", "consectetur",
         "adipiscing", "elit", "sed", "do", "eiusmod", "tempor",
@@ -17,11 +23,11 @@ public sealed class TextDataGenerator : DataGenerator
         "culpa", "qui", "officia", "deserunt", "mollit",
         "anim", "id", "est", "laborum"
     };
-    private int nextLoremIpsumWordIndex = 0;
+    private static int nextLoremIpsumWordIndex = 0;
 
-    public string RandomWord => loremIpsumWords[nextLoremIpsumWordIndex++ % loremIpsumWords.Length];
+    public static string RandomWord => loremIpsumWords[nextLoremIpsumWordIndex++ % loremIpsumWords.Length];
 
-    public string RandomSentence(int minSentenceSize = 5, int maxSentenceSize = 15)
+    public static string RandomWords(int minSentenceSize = 5, int maxSentenceSize = 15, char seperator = ' ')
     {
         StringBuilder loremIpsumBuilder = new();
 
@@ -31,9 +37,9 @@ public sealed class TextDataGenerator : DataGenerator
         {
             int randomIndex = random.Next(loremIpsumWords.Length);
             string word = loremIpsumWords[randomIndex];
-            loremIpsumBuilder.Append(word).Append(' ');
+            loremIpsumBuilder.Append(word).Append(seperator);
         }
 
-        return loremIpsumBuilder.ToString().Trim();
+        return loremIpsumBuilder.ToString().Trim(seperator);
     }
 }

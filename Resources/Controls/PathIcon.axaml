@@ -4,8 +4,8 @@
 	
     <ControlTheme x:Key="{x:Type PathIcon}" TargetType="{x:Type PathIcon}">
         <Setter Property="PathIcon.Background" Value="Transparent" />
-        <Setter Property="PathIcon.Height" Value="{DynamicResource IconElementThemeHeight}" />
-        <Setter Property="PathIcon.Width" Value="{DynamicResource IconElementThemeWidth}" />
+        <Setter Property="PathIcon.Height" Value="{StaticResource IconElementThemeHeight}" />
+        <Setter Property="PathIcon.Width" Value="{StaticResource IconElementThemeWidth}" />
         <Setter Property="Template">
             <ControlTemplate TargetType="{x:Type PathIcon}">
                 <Border Background="{TemplateBinding Background}">
