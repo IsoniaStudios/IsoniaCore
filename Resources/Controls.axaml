@@ -5,16 +5,16 @@
 	<Styles.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/TextBlock.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/Button.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/CaptionButtons.axaml" />
-				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/TitleBar.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ContentControl.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/EmbeddableControlRoot.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ItemsControl.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ListBox.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/PathIcon.axaml" />
-				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/EmbeddableControlRoot.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/TextBlock.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ThemeVariantScope.axaml" />
-				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ItemsControl.axaml" />
-				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ContentControl.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/TitleBar.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/UserControl.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/Window.axaml" />
 			</ResourceDictionary.MergedDictionaries>
