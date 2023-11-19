@@ -1,0 +1,73 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<!-- Taken from https://semi.design/ and https://github.com/catppuccin/catppuccin -->
+	
+	<!-- Preview -->
+	<Design.PreviewWith>
+		<UniformGrid Columns="4">
+			<UniformGrid.Resources>
+				<ResourceDictionary>
+					<ResourceDictionary.MergedDictionaries>
+						<ControlTheme TargetType="{x:Type Canvas}">
+							<Setter Property="Height" Value="32"/>
+							<Setter Property="Width" Value="32"/>
+							<Setter Property="Margin" Value="4"/>
+						</ControlTheme>
+					</ResourceDictionary.MergedDictionaries>
+				</ResourceDictionary>
+			</UniformGrid.Resources>
+
+			<Canvas Background="{StaticResource Primary-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Primary-Pointerover-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Primary-Pressed-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Primary-Disabled-SolidColorBrush}"/>
+
+			<Canvas Background="{StaticResource Secondary-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Secondary-Pointerover-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Secondary-Pressed-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Secondary-Disabled-SolidColorBrush}"/>
+
+			<Canvas Background="{StaticResource Tertiary-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Tertiary-Pointerover-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Tertiary-Pressed-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Tertiary-Disabled-SolidColorBrush}"/>
+			
+		</UniformGrid>
+	</Design.PreviewWith>
+
+	<!-- Primary -->
+	<Color x:Key="Primary-Color">#FF54A9FF</Color>
+	<Color x:Key="Primary-Pointerover-Color">#FF7FC1FF</Color>
+	<Color x:Key="Primary-Pressed-Color">#FFA9D7FF</Color>
+	<Color x:Key="Primary-Disabled-Color">#FF135CB8</Color>
+
+	<SolidColorBrush x:Key="Primary-SolidColorBrush" Color="{StaticResource Primary-Color}" />
+	<SolidColorBrush x:Key="Primary-Pointerover-SolidColorBrush" Color="{StaticResource Primary-Pointerover-Color}" />
+	<SolidColorBrush x:Key="Primary-Pressed-SolidColorBrush" Color="{StaticResource Primary-Pressed-Color}" />
+	<SolidColorBrush x:Key="Primary-Disabled-SolidColorBrush" Color="{StaticResource Primary-Disabled-Color}" />
+	
+	<!-- Secondary -->
+	<Color x:Key="Secondary-Color">#FF40B4F3</Color>
+	<Color x:Key="Secondary-Pointerover-Color">#FF6EC8F6</Color>
+	<Color x:Key="Secondary-Pressed-Color">#FF9DDCF9</Color>
+	<Color x:Key="Secondary-Disabled-Color">#FF0366A9</Color>
+
+	<SolidColorBrush x:Key="Secondary-SolidColorBrush" Color="{StaticResource Secondary-Color}" />
+	<SolidColorBrush x:Key="Secondary-Pointerover-SolidColorBrush" Color="{StaticResource Secondary-Pointerover-Color}" />
+	<SolidColorBrush x:Key="Secondary-Pressed-SolidColorBrush" Color="{StaticResource Secondary-Pressed-Color}" />
+	<SolidColorBrush x:Key="Secondary-Disabled-SolidColorBrush" Color="{StaticResource Secondary-Disabled-Color}" />
+	
+	<!-- Tertiary -->
+	<Color x:Key="Tertiary-Color">#FF888D92</Color>
+	<Color x:Key="Tertiary-Pointerover-Color">#FFA7ABB0</Color>
+	<Color x:Key="Tertiary-Pressed-Color">#FFC6CACD</Color>
+	<Color x:Key="Tertiary-Disabled-Color">#FF41464C</Color>
+
+	<SolidColorBrush x:Key="Tertiary-SolidColorBrush" Color="{StaticResource Tertiary-Color}" />
+	<SolidColorBrush x:Key="Tertiary-Pointerover-SolidColorBrush" Color="{StaticResource Tertiary-Pointerover-Color}" />
+	<SolidColorBrush x:Key="Tertiary-Pressed-SolidColorBrush" Color="{StaticResource Tertiary-Pressed-Color}" />
+	<SolidColorBrush x:Key="Tertiary-Disabled-SolidColorBrush" Color="{StaticResource Tertiary-Disabled-Color}" />
+
+</ResourceDictionary>

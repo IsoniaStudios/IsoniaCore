@@ -14,22 +14,22 @@
 		<Setter Property="FontWeight" Value="400" />
 		<Setter Property="Foreground" Value="{TemplateBinding Foreground}" />
 		<Style Selector="^.Primary">
-			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
 		</Style>
 		<Style Selector="^.Secondary">
-            <Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
-        </Style>
-        <Style Selector="^.Tertiary">
             <Setter Property="Foreground" Value="{StaticResource Foreground-2-SolidColorBrush}" />
         </Style>
+        <Style Selector="^.Tertiary">
+            <Setter Property="Foreground" Value="{StaticResource Foreground-3-SolidColorBrush}" />
+        </Style>
 		<Style Selector="^.Quaternary">
-			<Setter Property="Foreground" Value="{StaticResource Foreground-3-SolidColorBrush}" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-4-SolidColorBrush}" />
 		</Style>
 		<Style Selector="^.Quinary">
-			<Setter Property="Foreground" Value="{StaticResource Foreground-4-SolidColorBrush}" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-5-SolidColorBrush}" />
 		</Style>
 		<Style Selector="^:disabled">
-			<Setter Property="Foreground" Value="{StaticResource Foreground-4-SolidColorBrush}" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-5-SolidColorBrush}" />
 		</Style>
 		<Style Selector="^.Success">
 			<Setter Property="Foreground" Value="{StaticResource Success-SolidColorBrush}" />

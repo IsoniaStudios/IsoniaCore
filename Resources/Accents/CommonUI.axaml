@@ -19,11 +19,11 @@
 				</ResourceDictionary>
 			</UniformGrid.Resources>
 
-			<Canvas Background="{StaticResource Foreground-0-SolidColorBrush}"/>
 			<Canvas Background="{StaticResource Foreground-1-SolidColorBrush}"/>
 			<Canvas Background="{StaticResource Foreground-2-SolidColorBrush}"/>
 			<Canvas Background="{StaticResource Foreground-3-SolidColorBrush}"/>
 			<Canvas Background="{StaticResource Foreground-4-SolidColorBrush}"/>
+			<Canvas Background="{StaticResource Foreground-5-SolidColorBrush}"/>
 
 			<Canvas Background="{StaticResource Background-0-SolidColorBrush}"/>
 			<Canvas Background="{StaticResource Background-1-SolidColorBrush}"/>
@@ -42,17 +42,19 @@
 	</Design.PreviewWith>
 
 	<!-- Foreground -->
-	<Color x:Key="Foreground-0-Color">#FFF9F9F9</Color>
-	<Color x:Key="Foreground-1-Color">#FFD3D3D3</Color>
-	<Color x:Key="Foreground-2-Color">#FFADADAD</Color>
-	<Color x:Key="Foreground-3-Color">#FF878787</Color>
-	<Color x:Key="Foreground-4-Color">#FF616161</Color>
+	<Color x:Key="Foreground-0-Color">#FFFFFFFF</Color>
+	<Color x:Key="Foreground-1-Color">#FFF9F9F9</Color>
+	<Color x:Key="Foreground-2-Color">#FFD3D3D3</Color>
+	<Color x:Key="Foreground-3-Color">#FFADADAD</Color>
+	<Color x:Key="Foreground-4-Color">#FF878787</Color>
+	<Color x:Key="Foreground-5-Color">#FF616161</Color>
 
 	<SolidColorBrush x:Key="Foreground-0-SolidColorBrush" Color="{StaticResource Foreground-0-Color}" />
 	<SolidColorBrush x:Key="Foreground-1-SolidColorBrush" Color="{StaticResource Foreground-1-Color}" />
 	<SolidColorBrush x:Key="Foreground-2-SolidColorBrush" Color="{StaticResource Foreground-2-Color}" />
 	<SolidColorBrush x:Key="Foreground-3-SolidColorBrush" Color="{StaticResource Foreground-3-Color}" />
 	<SolidColorBrush x:Key="Foreground-4-SolidColorBrush" Color="{StaticResource Foreground-4-Color}" />
+	<SolidColorBrush x:Key="Foreground-5-SolidColorBrush" Color="{StaticResource Foreground-5-Color}" />
 
 	<!-- Background -->
 	<Color x:Key="Background-0-Color">#FF16161A</Color>

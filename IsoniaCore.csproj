@@ -22,4 +22,10 @@
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.2" />
   </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaXaml Update="Resources\Accents\Palette.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaXaml>
+  </ItemGroup>
 </Project>

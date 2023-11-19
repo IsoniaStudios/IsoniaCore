@@ -8,7 +8,7 @@
 
 	<ControlTheme x:Key="{x:Type Window}" TargetType="{x:Type Window}">
 		<Setter Property="Background" Value="{StaticResource Background-0-SolidColorBrush}" />
-		<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+		<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
 		<Setter Property="BorderBrush" Value="{StaticResource Fill-1-SolidColorBrush}" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="{x:Type Window}">

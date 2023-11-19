@@ -1,0 +1,318 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="using:Avalonia.Controls.Converters"
+                    x:CompileBindings="True">
+
+	<x:Double x:Key="ScrollBarThickness">14</x:Double>
+	<x:Double x:Key="ScrollBarThumbThickness">10</x:Double>
+	<PathGeometry x:Key="ScrollBarLeftGlyph">M16.3176 6.95628V17.0878C16.3176 17.4871 15.8725 17.7253 15.5402 17.5038L7.94161 12.438C7.64474 12.2401 7.64474 11.8039 7.94161 11.606L15.5402 6.54025C15.8725 6.31873 16.3176 6.55693 16.3176 6.95628Z</PathGeometry>
+	<PathGeometry x:Key="ScrollBarRightGlyph">M9 17.0657V6.93425C9 6.5349 9.44507 6.29671 9.77735 6.51823L17.376 11.584C17.6728 11.7819 17.6728 12.2181 17.376 12.416L9.77735 17.4818C9.44507 17.7033 9 17.4651 9 17.0657Z</PathGeometry>
+	<PathGeometry x:Key="ScrollBarUpGlyph">M17.0839 16.3212H6.9524C6.55305 16.3212 6.31486 15.8761 6.53638 15.5438L11.6021 7.94521C11.8 7.64834 12.2363 7.64834 12.4342 7.94521L17.4999 15.5438C17.7214 15.8761 17.4832 16.3212 17.0839 16.3212Z</PathGeometry>
+	<PathGeometry x:Key="ScrollBarDownGlyph">M6.95249 7.72265L17.084 7.72265C17.4833 7.72265 17.7215 8.16772 17.5 8.5L12.4343 16.0986C12.2363 16.3955 11.8001 16.3955 11.6022 16.0986L6.53647 8.5C6.31495 8.16772 6.55315 7.72265 6.95249 7.72265Z</PathGeometry>
+
+	<SolidColorBrush x:Key="ScrollBarButtonDefaultForeground" Opacity="0.35" Color="#F9F9F9" />
+	<SolidColorBrush x:Key="ScrollBarButtonPointeroverForeground" Opacity="0.6" Color="#F9F9F9" />
+	<SolidColorBrush x:Key="ScrollBarThumbForeground" Opacity="0.35" Color="#F9F9F9" />
+	<SolidColorBrush x:Key="ScrollBarThumbPointeroverForeground" Opacity="0.6" Color="#F9F9F9" />
+	<SolidColorBrush x:Key="ScrollBarBackground" Color="Transparent" />
+
+    <ControlTheme x:Key="ScrollBarRepeatButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Content="{TemplateBinding Content}"
+                                      Foreground="{TemplateBinding Foreground}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+		<Setter Property="AllowAutoHide" Value="False" />
+		<Setter Property="Cursor" Value="Arrow" />
+        <Style Selector="^:horizontal">
+            <Setter Property="Height" Value="{StaticResource ScrollBarThickness}" />
+            <Setter Property="Template">
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Border Background="{StaticResource ScrollBarBackground}" UseLayoutRounding="False">
+                        <Grid Name="PART_RootGrid" ColumnDefinitions="Auto,*,Auto">
+                            <RepeatButton Name="PART_LineUpButton"
+                                          Grid.Row="0" Grid.Column="0"
+                                          MinWidth="{StaticResource ScrollBarThickness}"
+                                          VerticalAlignment="Center"
+                                          Focusable="False"
+                                          Padding="4,0"
+                                          Theme="{StaticResource ScrollBarRepeatButton}">
+                                <PathIcon Width="10" Height="10"
+                                          Data="{StaticResource ScrollBarLeftGlyph}" />
+                            </RepeatButton>
+                            <Track Grid.Column="1"
+                                   Maximum="{TemplateBinding Maximum}"
+                                   Minimum="{TemplateBinding Minimum}"
+                                   Orientation="{TemplateBinding Orientation}"
+                                   ViewportSize="{TemplateBinding ViewportSize}"
+                                   Value="{TemplateBinding Value, Mode=TwoWay}">
+                                <Track.DecreaseButton>
+                                    <RepeatButton Name="PART_PageUpButton"
+                                                  MinWidth="0"
+                                                  HorizontalAlignment="Stretch"
+                                                  VerticalAlignment="Stretch"
+                                                  CornerRadius="0"
+                                                  Focusable="False"
+                                                  Theme="{StaticResource ScrollBarRepeatButton}" />
+                                </Track.DecreaseButton>
+                                <Track.IncreaseButton>
+                                    <RepeatButton Name="PART_PageDownButton"
+                                                  HorizontalAlignment="Stretch"
+                                                  VerticalAlignment="Stretch"
+                                                  CornerRadius="0"
+                                                  Focusable="False"
+                                                  MinWidth="0"
+                                                  Theme="{StaticResource ScrollBarRepeatButton}" />
+                                </Track.IncreaseButton>
+                                <Thumb Name="thumb" />
+                            </Track>
+                            <RepeatButton Name="PART_LineDownButton"
+                                          Grid.Column="2"
+                                          MinWidth="{StaticResource ScrollBarThickness}"
+                                          VerticalAlignment="Center"
+                                          VerticalContentAlignment="Center"
+                                          Focusable="False"
+                                          Padding="4,0"
+                                          Theme="{StaticResource ScrollBarRepeatButton}">
+                                <PathIcon Width="10" Height="10"
+                                          Data="{StaticResource ScrollBarRightGlyph}" />
+                            </RepeatButton>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="^:vertical">
+            <Setter Property="Width" Value="{StaticResource ScrollBarThickness}" />
+            <Setter Property="Template">
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Border Background="{StaticResource ScrollBarBackground}" UseLayoutRounding="False">
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <RepeatButton Name="PART_LineUpButton"
+                                          Grid.Row="0"
+                                          MinHeight="{StaticResource ScrollBarThickness}"
+                                          Padding="0,4"
+                                          VerticalAlignment="Center"
+                                          HorizontalContentAlignment="Center"
+                                          VerticalContentAlignment="Center"
+                                          Focusable="False"
+                                          Theme="{StaticResource ScrollBarRepeatButton}">
+                                <PathIcon Width="10" Height="10"
+                                          Data="{StaticResource ScrollBarUpGlyph}" />
+                            </RepeatButton>
+                            <Track Grid.Row="1"
+                                   IsDirectionReversed="True"
+                                   Maximum="{TemplateBinding Maximum}"
+                                   Minimum="{TemplateBinding Minimum}"
+                                   Orientation="{TemplateBinding Orientation}"
+                                   ViewportSize="{TemplateBinding ViewportSize}"
+                                   Value="{TemplateBinding Value, Mode=TwoWay}">
+                                <Track.DecreaseButton>
+                                    <RepeatButton Name="PART_PageUpButton"
+                                                  MinHeight="0"
+                                                  HorizontalAlignment="Stretch"
+                                                  VerticalAlignment="Stretch"
+                                                  CornerRadius="0"
+                                                  Focusable="False"
+                                                  Theme="{StaticResource ScrollBarRepeatButton}" />
+                                </Track.DecreaseButton>
+                                <Track.IncreaseButton>
+                                    <RepeatButton Name="PART_PageDownButton"
+                                                  MinHeight="0"
+                                                  HorizontalAlignment="Stretch"
+                                                  VerticalAlignment="Stretch"
+                                                  CornerRadius="0"
+                                                  Focusable="False"
+                                                  Theme="{StaticResource ScrollBarRepeatButton}" />
+                                </Track.IncreaseButton>
+                                <Thumb Name="thumb" />
+                            </Track>
+                            <RepeatButton Name="PART_LineDownButton"
+                                          Grid.Row="2"
+                                          MinHeight="{StaticResource ScrollBarThickness}"
+                                          Padding="0,4"
+                                          HorizontalContentAlignment="Center"
+                                          VerticalContentAlignment="Center"
+                                          Focusable="False"
+                                          Theme="{StaticResource ScrollBarRepeatButton}">
+                                <PathIcon Width="10" Height="10"
+                                          Data="{StaticResource ScrollBarDownGlyph}" />
+                            </RepeatButton>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="^ /template/ Thumb#thumb">
+            <Setter Property="Foreground" Value="{StaticResource ScrollBarThumbForeground}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border Background="{TemplateBinding Foreground}"
+                                CornerRadius="24"
+                                UseLayoutRounding="False" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style Selector="^ /template/ Thumb#thumb:pointerover">
+            <Setter Property="Foreground" Value="{StaticResource ScrollBarThumbPointeroverForeground}" />
+        </Style>
+        <Style Selector="^:horizontal /template/ Thumb#thumb">
+            <Setter Property="MinWidth" Value="{StaticResource ScrollBarThickness}" />
+            <Setter Property="Height" Value="{StaticResource ScrollBarThumbThickness}" />
+        </Style>
+        <Style Selector="^:vertical /template/ Thumb#thumb">
+            <Setter Property="MinHeight" Value="{StaticResource ScrollBarThickness}" />
+            <Setter Property="Width" Value="{StaticResource ScrollBarThumbThickness}" />
+        </Style>
+        <Style Selector="^ /template/ RepeatButton &gt; PathIcon">
+            <Setter Property="Foreground" Value="{StaticResource ScrollBarButtonDefaultForeground}" />
+        </Style>
+        <Style Selector="^ /template/ RepeatButton:pointerover &gt; PathIcon">
+            <Setter Property="Foreground" Value="{StaticResource ScrollBarButtonPointeroverForeground}" />
+        </Style>
+        <Style Selector="^ /template/ RepeatButton:pressed &gt; PathIcon">
+            <Setter Property="RenderTransform" Value="scale(0.92)" />
+        </Style>
+    </ControlTheme>
+	
+    <ControlTheme x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}">
+		<Setter Property="AllowAutoHide" Value="False" />
+		<Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
+                    <ScrollContentPresenter Name="PART_ContentPresenter"
+                                            Grid.RowSpan="2"
+                                            Grid.ColumnSpan="2"
+                                            Padding="{TemplateBinding Padding}"
+                                            Background="{TemplateBinding Background}"
+                                            HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
+                                            HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
+                                            ScrollViewer.IsScrollInertiaEnabled="{TemplateBinding IsScrollInertiaEnabled}"
+                                            VerticalSnapPointsAlignment="{TemplateBinding VerticalSnapPointsAlignment}"
+                                            VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}">
+                        <ScrollContentPresenter.GestureRecognizers>
+                            <ScrollGestureRecognizer CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+                                                     CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
+                                                     IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_ContentPresenter}" />
+                        </ScrollContentPresenter.GestureRecognizers>
+                    </ScrollContentPresenter>
+                    <ScrollBar Name="PART_HorizontalScrollBar"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               Opacity="0"
+                               Orientation="Horizontal" />
+                    <ScrollBar Name="PART_VerticalScrollBar"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               Opacity="0"
+                               Orientation="Vertical" />
+                    <Panel Grid.Row="1"
+                           Grid.Column="1" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover">
+            <Style Selector="^ /template/ ScrollBar#PART_HorizontalScrollBar">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^ /template/ ScrollBar#PART_VerticalScrollBar">
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="StaticScrollViewer" TargetType="{x:Type ScrollViewer}">
+		<Setter Property="AllowAutoHide" Value="False" />
+		<Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
+                    <ScrollContentPresenter Name="PART_ContentPresenter"
+                                            Padding="{TemplateBinding Padding}"
+                                            Background="{TemplateBinding Background}"
+                                            HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
+                                            HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
+                                            ScrollViewer.IsScrollInertiaEnabled="{TemplateBinding IsScrollInertiaEnabled}"
+                                            VerticalSnapPointsAlignment="{TemplateBinding VerticalSnapPointsAlignment}"
+                                            VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}">
+                        <ScrollContentPresenter.GestureRecognizers>
+                            <ScrollGestureRecognizer CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+                                                     CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
+                                                     IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_ContentPresenter}" />
+                        </ScrollContentPresenter.GestureRecognizers>
+                    </ScrollContentPresenter>
+                    <ScrollBar Name="PART_HorizontalScrollBar"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               Orientation="Horizontal" />
+                    <ScrollBar Name="PART_VerticalScrollBar"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               Orientation="Vertical" />
+                    <Panel Grid.Row="1"
+                           Grid.Column="1" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="SimpleMenuScrollViewer" TargetType="{x:Type ScrollViewer}">
+		<Setter Property="AllowAutoHide" Value="False" />
+		<Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                <DockPanel>
+                    <RepeatButton Background="Transparent"
+                                  BorderThickness="0"
+                                  Command="{Binding LineUp, RelativeSource={RelativeSource TemplatedParent}}"
+                                  DockPanel.Dock="Top">
+                        <RepeatButton.IsVisible>
+                            <MultiBinding Converter="{x:Static converters:MenuScrollingVisibilityConverter.Instance}" ConverterParameter="0">
+                                <ReflectionBinding Path="VerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <ReflectionBinding Path="Offset.Y" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <ReflectionBinding Path="Extent.Height" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <ReflectionBinding Path="Viewport.Height" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding>
+                        </RepeatButton.IsVisible>
+                        <Path Data="M 0 4 L 8 4 L 4 0 Z" />
+                    </RepeatButton>
+                    <RepeatButton Background="Transparent"
+                                  BorderThickness="0"
+                                  Command="{Binding LineDown, RelativeSource={RelativeSource TemplatedParent}}"
+                                  DockPanel.Dock="Bottom">
+                        <RepeatButton.IsVisible>
+                            <MultiBinding Converter="{x:Static converters:MenuScrollingVisibilityConverter.Instance}" ConverterParameter="100">
+                                <ReflectionBinding Path="VerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <ReflectionBinding Path="Offset.Y" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <ReflectionBinding Path="Extent.Height" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <ReflectionBinding Path="Viewport.Height" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding>
+                        </RepeatButton.IsVisible>
+                        <Path Data="M 0 0 L 4 4 L 8 0 Z" />
+                    </RepeatButton>
+                    <ScrollContentPresenter Name="PART_ContentPresenter" Margin="{TemplateBinding Padding}" />
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^ /template/ RepeatButton &gt; Path">
+            <Setter Property="Fill" Value="{StaticResource ScrollBarButtonDefaultForeground}" />
+        </Style>
+
+        <Style Selector="^ /template/ RepeatButton:pointerover &gt; Path">
+            <Setter Property="Fill" Value="{StaticResource ScrollBarButtonPointeroverForeground}" />
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>

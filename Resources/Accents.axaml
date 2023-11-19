@@ -3,6 +3,7 @@
 					x:CompileBindings="True">
 
 	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="avares://IsoniaCore/Resources/Accents/Palette.axaml" />
 		<ResourceInclude Source="avares://IsoniaCore/Resources/Accents/Alerts.axaml" />
 		<ResourceInclude Source="avares://IsoniaCore/Resources/Accents/CommonUI.axaml" />
 	</ResourceDictionary.MergedDictionaries>

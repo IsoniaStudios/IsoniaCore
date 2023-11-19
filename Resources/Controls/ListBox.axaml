@@ -33,7 +33,7 @@
 	
     <ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="{x:Type ListBoxItem}">
 		<Setter Property="ListBoxItem.Background" Value="Transparent" />
-		<Setter Property="ListBoxItem.Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
+		<Setter Property="ListBoxItem.Foreground" Value="{StaticResource Foreground-2-SolidColorBrush}" />
 		<Setter Property="ListBoxItem.Margin" Value="2" />
         <Setter Property="ListBoxItem.CornerRadius" Value="8" />
         <Setter Property="ListBoxItem.Template">
@@ -56,19 +56,19 @@
         <Style Selector="^:pointerover">
 			<Setter Property="Cursor" Value="Hand" />
             <Setter Property="Background" Value="{StaticResource Fill-0-SolidColorBrush}" />
-			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
 		</Style>
 
         <!--  Pressed State  -->
         <Style Selector="^:pressed">
             <Setter Property="Background" Value="{StaticResource Fill-1-SolidColorBrush}" />
-			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
 		</Style>
 
         <!--  Selected State  -->
         <Style Selector="^:selected">
 			<Setter Property="Background" Value="{StaticResource Fill-1-SolidColorBrush}" />
-			<Setter Property="Foreground" Value="{StaticResource Foreground-0-SolidColorBrush}" />
+			<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
 			<Style Selector="^:pointerover">
 				<Setter Property="Cursor" Value="Hand" />
 				<Setter Property="Background" Value="{StaticResource Fill-2-SolidColorBrush}" />

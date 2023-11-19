@@ -6,8 +6,8 @@ namespace IsoniaCore.Resources.Icons;
 
 public static partial class IconStore
 {
+    private static StreamGeometry? openFolderIcon;
     private static StreamGeometry? folderIcon;
-    private static StreamGeometry? fileIcon;
+    public static StreamGeometry? OpenFolderIcon => openFolderIcon ??= Application.Current?.Resources.GetResource<StreamGeometry>(nameof(OpenFolderIcon));
     public static StreamGeometry? FolderIcon => folderIcon ??= Application.Current?.Resources.GetResource<StreamGeometry>(nameof(FolderIcon));
-    public static StreamGeometry? FileIcon => fileIcon ??= Application.Current?.Resources.GetResource<StreamGeometry>(nameof(FileIcon));
 }
