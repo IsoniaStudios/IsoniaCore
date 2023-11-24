@@ -3,7 +3,7 @@
                     xmlns:converters="using:Avalonia.Controls.Converters"
                     x:CompileBindings="True">
 
-	<x:Double x:Key="ScrollBarThickness">32</x:Double>
+	<x:Double x:Key="ScrollBarThickness">24</x:Double>
 	<x:Double x:Key="ScrollBarThumbThickness">10</x:Double>
 	<PathGeometry x:Key="ScrollBarLeftGlyph">M16.3176 6.95628V17.0878C16.3176 17.4871 15.8725 17.7253 15.5402 17.5038L7.94161 12.438C7.64474 12.2401 7.64474 11.8039 7.94161 11.606L15.5402 6.54025C15.8725 6.31873 16.3176 6.55693 16.3176 6.95628Z</PathGeometry>
 	<PathGeometry x:Key="ScrollBarRightGlyph">M9 17.0657V6.93425C9 6.5349 9.44507 6.29671 9.77735 6.51823L17.376 11.584C17.6728 11.7819 17.6728 12.2181 17.376 12.416L9.77735 17.4818C9.44507 17.7033 9 17.4651 9 17.0657Z</PathGeometry>
@@ -21,7 +21,7 @@
         <Setter Property="Foreground" Value="Gray" />
         <Setter Property="Template">
             <ControlTemplate>
-                <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                <Border Background="{TemplateBinding Background}">
                     <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                       Content="{TemplateBinding Content}"
@@ -35,7 +35,7 @@
 		<Setter Property="Cursor" Value="Arrow" />
         <Style Selector="^:horizontal">
             <Setter Property="Height" Value="{StaticResource ScrollBarThickness}" />
-            <Setter Property="Template">
+			<Setter Property="Template">
                 <ControlTemplate TargetType="{x:Type ScrollBar}">
                     <Border Background="{StaticResource ScrollBarBackground}" UseLayoutRounding="False">
                         <Grid Name="PART_RootGrid" ColumnDefinitions="Auto,*,Auto">
@@ -46,7 +46,7 @@
                                           Focusable="False"
                                           Padding="4,0"
                                           Theme="{StaticResource ScrollBarRepeatButton}">
-                                <PathIcon Width="10" Height="10"
+                                <PathIcon Width="{StaticResource ScrollBarThumbThickness}" Height="{StaticResource ScrollBarThumbThickness}"
                                           Data="{StaticResource ScrollBarLeftGlyph}" />
                             </RepeatButton>
                             <Track Grid.Column="1"
@@ -83,7 +83,7 @@
                                           Focusable="False"
                                           Padding="4,0"
                                           Theme="{StaticResource ScrollBarRepeatButton}">
-                                <PathIcon Width="10" Height="10"
+                                <PathIcon Width="{StaticResource ScrollBarThumbThickness}" Height="{StaticResource ScrollBarThumbThickness}"
                                           Data="{StaticResource ScrollBarRightGlyph}" />
                             </RepeatButton>
                         </Grid>
@@ -92,8 +92,8 @@
             </Setter>
         </Style>
         <Style Selector="^:vertical">
-            <Setter Property="Width" Value="{StaticResource ScrollBarThickness}" />
-            <Setter Property="Template">
+			<Setter Property="Width" Value="{StaticResource ScrollBarThickness}" />
+			<Setter Property="Template">
                 <ControlTemplate TargetType="{x:Type ScrollBar}">
                     <Border Background="{StaticResource ScrollBarBackground}" UseLayoutRounding="False">
                         <Grid RowDefinitions="Auto,*,Auto">
@@ -106,7 +106,7 @@
                                           VerticalContentAlignment="Center"
                                           Focusable="False"
                                           Theme="{StaticResource ScrollBarRepeatButton}">
-                                <PathIcon Width="10" Height="10"
+                                <PathIcon Width="{StaticResource ScrollBarThumbThickness}" Height="{StaticResource ScrollBarThumbThickness}"
                                           Data="{StaticResource ScrollBarUpGlyph}" />
                             </RepeatButton>
                             <Track Grid.Row="1"
@@ -144,7 +144,7 @@
                                           VerticalContentAlignment="Center"
                                           Focusable="False"
                                           Theme="{StaticResource ScrollBarRepeatButton}">
-                                <PathIcon Width="10" Height="10"
+                                <PathIcon Width="{StaticResource ScrollBarThumbThickness}" Height="{StaticResource ScrollBarThumbThickness}"
                                           Data="{StaticResource ScrollBarDownGlyph}" />
                             </RepeatButton>
                         </Grid>
@@ -192,7 +192,6 @@
 			<ControlTemplate TargetType="{x:Type ScrollViewer}">
 				<Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
 					<ScrollContentPresenter Name="PART_ContentPresenter"
-                                            Padding="{TemplateBinding Padding}"
                                             Background="{TemplateBinding Background}"
                                             HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
                                             HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
@@ -219,50 +218,50 @@
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>
-	
-    <ControlTheme x:Key="HiddenScrollViewer" TargetType="{x:Type ScrollViewer}">
+
+	<ControlTheme x:Key="HiddenScrollViewer" TargetType="{x:Type ScrollViewer}">
 		<Setter Property="Background" Value="Transparent" />
-        <Setter Property="Template">
-            <ControlTemplate TargetType="{x:Type ScrollViewer}">
-                <Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
-                    <ScrollContentPresenter Name="PART_ContentPresenter"
+		<Setter Property="Template">
+			<ControlTemplate TargetType="{x:Type ScrollViewer}">
+				<Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
+					<ScrollContentPresenter Name="PART_ContentPresenter"
                                             Grid.RowSpan="2"
                                             Grid.ColumnSpan="2"
-                                            Padding="{TemplateBinding Padding}"
                                             Background="{TemplateBinding Background}"
                                             HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
                                             HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
                                             ScrollViewer.IsScrollInertiaEnabled="{TemplateBinding IsScrollInertiaEnabled}"
                                             VerticalSnapPointsAlignment="{TemplateBinding VerticalSnapPointsAlignment}"
                                             VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}">
-                        <ScrollContentPresenter.GestureRecognizers>
-                            <ScrollGestureRecognizer CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+						<ScrollContentPresenter.GestureRecognizers>
+							<ScrollGestureRecognizer CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
                                                      CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
                                                      IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_ContentPresenter}" />
-                        </ScrollContentPresenter.GestureRecognizers>
-                    </ScrollContentPresenter>
-                    <ScrollBar Name="PART_HorizontalScrollBar"
+						</ScrollContentPresenter.GestureRecognizers>
+					</ScrollContentPresenter>
+					<ScrollBar Name="PART_HorizontalScrollBar"
                                Grid.Row="1"
                                Grid.Column="0"
                                Opacity="0"
                                Orientation="Horizontal" />
-                    <ScrollBar Name="PART_VerticalScrollBar"
+					<ScrollBar Name="PART_VerticalScrollBar"
                                Grid.Row="0"
                                Grid.Column="1"
                                Opacity="0"
                                Orientation="Vertical" />
-                    <Panel Grid.Row="1"
+					<Panel Grid.Row="1"
                            Grid.Column="1" />
-                </Grid>
-            </ControlTemplate>
-        </Setter>
-        <Style Selector="^:pointerover">
-            <Style Selector="^ /template/ ScrollBar#PART_HorizontalScrollBar">
-                <Setter Property="Opacity" Value="1" />
-            </Style>
-            <Style Selector="^ /template/ ScrollBar#PART_VerticalScrollBar">
-                <Setter Property="Opacity" Value="1" />
-            </Style>
-        </Style>
-    </ControlTheme>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ ScrollBar#PART_HorizontalScrollBar">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+			<Style Selector="^ /template/ ScrollBar#PART_VerticalScrollBar">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
 </ResourceDictionary>

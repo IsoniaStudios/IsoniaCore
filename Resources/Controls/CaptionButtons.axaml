@@ -110,4 +110,5 @@
 			<Setter Property="Opacity" Value="0.2"/>
 		</Style>
 	</ControlTheme>
+	
 </ResourceDictionary>

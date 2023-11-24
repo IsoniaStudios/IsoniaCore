@@ -41,6 +41,19 @@
 		</UniformGrid>
 	</Design.PreviewWith>
 
+	<!-- Selection -->
+	<Color x:Key="Selection-0-Color">#2954A9FF</Color> <!-- 16% -->
+	<Color x:Key="Selection-1-Color">#3354A9FF</Color> <!-- 20% -->
+	<Color x:Key="Selection-2-Color">#3D54A9FF</Color> <!-- 24% -->
+	<Color x:Key="Selection-3-Color">#4754A9FF</Color> <!-- 28% -->
+	<Color x:Key="Selection-4-Color">#5254A9FF</Color> <!-- 32% -->
+
+	<SolidColorBrush x:Key="Selection-0-SolidColorBrush" Color="{StaticResource Selection-0-Color}" />
+	<SolidColorBrush x:Key="Selection-1-SolidColorBrush" Color="{StaticResource Selection-1-Color}" />
+	<SolidColorBrush x:Key="Selection-2-SolidColorBrush" Color="{StaticResource Selection-2-Color}" />
+	<SolidColorBrush x:Key="Selection-3-SolidColorBrush" Color="{StaticResource Selection-3-Color}" />
+	<SolidColorBrush x:Key="Selection-4-SolidColorBrush" Color="{StaticResource Selection-4-Color}" />
+
 	<!-- Foreground -->
 	<Color x:Key="Foreground-0-Color">#FFFFFFFF</Color>
 	<Color x:Key="Foreground-1-Color">#FFF9F9F9</Color>

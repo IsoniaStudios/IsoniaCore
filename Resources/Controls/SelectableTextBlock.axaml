@@ -2,26 +2,30 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:CompileBindings="True">
 
-	<Design.PreviewWith>
-        <StackPanel Spacing="20">
-			<TextBlock Text="Test" Classes="Underline Delete Success" IsEnabled="False" />
-			<!--<TextBlock Text="Test" Theme="{StaticResource Title}" />-->
-		</StackPanel>
-    </Design.PreviewWith>
-	
-    <ControlTheme x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
+    <MenuFlyout x:Key="SelectableTextBlockContextFlyout" Placement="Bottom">
+        <MenuItem
+            x:Name="SelectableTextBlockContextFlyoutCopyItem"
+            Command="{Binding $parent[SelectableTextBlock].Copy}"
+            Header="Copy"
+            InputGesture="{x:Static TextBox.CopyGesture}"
+            IsEnabled="{Binding $parent[SelectableTextBlock].CanCopy}" />
+    </MenuFlyout>
+
+	<ControlTheme x:Key="{x:Type SelectableTextBlock}" TargetType="{x:Type SelectableTextBlock}">
 		<Setter Property="FontSize" Value="14" />
 		<Setter Property="FontWeight" Value="400" />
 		<Setter Property="Foreground" Value="{TemplateBinding Foreground}" />
+		<Setter Property="SelectableTextBlock.SelectionBrush" Value="{StaticResource Selection-2-Color}" />
+		<Setter Property="SelectableTextBlock.Cursor" Value="Ibeam" />
 		<Style Selector="^.Primary">
 			<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
 		</Style>
 		<Style Selector="^.Secondary">
-            <Setter Property="Foreground" Value="{StaticResource Foreground-2-SolidColorBrush}" />
-        </Style>
-        <Style Selector="^.Tertiary">
-            <Setter Property="Foreground" Value="{StaticResource Foreground-3-SolidColorBrush}" />
-        </Style>
+			<Setter Property="Foreground" Value="{StaticResource Foreground-2-SolidColorBrush}" />
+		</Style>
+		<Style Selector="^.Tertiary">
+			<Setter Property="Foreground" Value="{StaticResource Foreground-3-SolidColorBrush}" />
+		</Style>
 		<Style Selector="^.Quaternary">
 			<Setter Property="Foreground" Value="{StaticResource Foreground-4-SolidColorBrush}" />
 		</Style>
@@ -37,9 +41,9 @@
 		<Style Selector="^:disabled.Success">
 			<Setter Property="Foreground" Value="{StaticResource Success-Disabled-SolidColorBrush}" />
 		</Style>
-        <Style Selector="^.Warning">
-            <Setter Property="Foreground" Value="{StaticResource Warning-SolidColorBrush}" />
-        </Style>
+		<Style Selector="^.Warning">
+			<Setter Property="Foreground" Value="{StaticResource Warning-SolidColorBrush}" />
+		</Style>
 		<Style Selector="^:disabled.Warning">
 			<Setter Property="Foreground" Value="{StaticResource Warning-Disabled-SolidColorBrush}" />
 		</Style>
@@ -50,24 +54,24 @@
 			<Setter Property="Foreground" Value="{StaticResource Error-Disabled-SolidColorBrush}" />
 		</Style>
 		<Style Selector="^.Underline">
-            <Setter Property="TextDecorations" Value="Underline" />
-        </Style>
-        <Style Selector="^.Delete">
-            <Setter Property="TextDecorations" Value="StrikeThrough" />
-        </Style>
-        <Style Selector="^.Underline.Delete">
-            <Setter Property="TextDecorations">
-                <TextDecorationCollection>
-                    <TextDecoration Location="Underline" />
-                    <TextDecoration Location="Strikethrough" />
-                </TextDecorationCollection>
-            </Setter>
-        </Style>
-    </ControlTheme>
+			<Setter Property="TextDecorations" Value="Underline" />
+		</Style>
+		<Style Selector="^.Delete">
+			<Setter Property="TextDecorations" Value="StrikeThrough" />
+		</Style>
+		<Style Selector="^.Underline.Delete">
+			<Setter Property="TextDecorations">
+				<TextDecorationCollection>
+					<TextDecoration Location="Underline" />
+					<TextDecoration Location="Strikethrough" />
+				</TextDecorationCollection>
+			</Setter>
+		</Style>
+	</ControlTheme>
 	<ControlTheme x:Key="Title"
-                  BasedOn="{StaticResource {x:Type TextBlock}}"
-                  TargetType="{x:Type TextBlock}">
-		<Setter Property="TextBlock.FontWeight" Value="600" />
+                  BasedOn="{StaticResource {x:Type SelectableTextBlock}}"
+                  TargetType="{x:Type SelectableTextBlock}">
+		<Setter Property="SelectableTextBlock.FontWeight" Value="600" />
 		<Style Selector="^.H1">
 			<Setter Property="FontSize" Value="32" />
 		</Style>
@@ -95,8 +99,8 @@
 	</ControlTheme>
 	<ControlTheme x:Key="SubTitle"
                   BasedOn="{StaticResource Title}"
-                  TargetType="{x:Type TextBlock}">
-		<Setter Property="TextBlock.FontWeight" Value="500" />
+                  TargetType="{x:Type SelectableTextBlock}">
+		<Setter Property="SelectableTextBlock.FontWeight" Value="500" />
 		<Style Selector="^.H1">
 			<Setter Property="FontSize" Value="28" />
 		</Style>
