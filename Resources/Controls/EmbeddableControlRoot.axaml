@@ -6,8 +6,8 @@
         <Setter Property="Background" Value="{StaticResource Background-0-SolidColorBrush}" />
         <Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
         <Setter Property="FontSize" Value="14" />
-        <!--<Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />-->
-        <Setter Property="Template">
+		<Setter Property="TextElement.FontFamily" Value="Inter" />
+		<Setter Property="Template">
             <ControlTemplate>
                 <Panel>
                     <Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />

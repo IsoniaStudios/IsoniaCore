@@ -12,10 +12,14 @@
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/FlyoutPresenter.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ItemsControl.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ListBox.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/Menu.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/MenuFlyoutPresenter.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/MenuItem.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/PathIcon.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/Popup.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ScrollViewer.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/SelectableTextBlock.axaml" />
+				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/Separator.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/TextBlock.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/ThemeVariantScope.axaml" />
 				<ResourceInclude Source="avares://IsoniaCore/Resources/Controls/TitleBar.axaml" />

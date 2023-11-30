@@ -1,0 +1,214 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:converters="using:Avalonia.Controls.Converters"
+                    x:CompileBindings="True">
+
+	<PathGeometry x:Key="MenuItemExpandIconGlyph">M7.43934 19.7957C6.85355 19.2099 6.85355 18.2601 7.43934 17.6744L13.0962 12.0175L7.43934 6.36065C6.85355 5.77486 6.85355 4.82511 7.43934 4.23933C8.02513 3.65354 8.97487 3.65354 9.56066 4.23933L16.2782 10.9568C16.864 11.5426 16.864 12.4924 16.2782 13.0782L9.56066 19.7957C8.97487 20.3815 8.02513 20.3815 7.43934 19.7957Z</PathGeometry>
+	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
+
+	<ControlTheme x:Key="{x:Type MenuItem}" TargetType="MenuItem">
+		<Setter Property="Background" Value="{StaticResource Background-0-SolidColorBrush}" />
+		<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
+		<Setter Property="MenuItem.Cursor" Value="Hand" />
+		<Setter Property="Padding" Value="0,8" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border
+                        Name="PART_LayoutRoot"
+                        Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIcon" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIGT" />
+								<ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemChevron" />
+							</Grid.ColumnDefinitions>
+
+							<Viewbox
+                                Name="PART_IconPresenter"
+                                Width="16"
+                                Height="16"
+                                Margin="8"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                IsVisible="False"
+                                Stretch="Uniform">
+								<ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Content="{TemplateBinding Icon}" />
+							</Viewbox>
+
+							<ContentPresenter
+                                Name="PART_HeaderPresenter"
+                                Grid.Column="1"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                Content="{TemplateBinding Header}"
+                                RecognizesAccessKey="True" />
+							<TextBlock
+                                x:Name="PART_InputGestureText"
+                                Grid.Column="2"
+                                Margin="8"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="{StaticResource Foreground-1-SolidColorBrush}"
+                                Text="{TemplateBinding InputGesture, Converter={StaticResource KeyGestureConverter}}" />
+							<PathIcon
+                                Name="PART_ExpandIcon"
+                                Grid.Column="3"
+                                Width="8"
+                                Height="8"
+                                Margin="4"
+                                VerticalAlignment="Center"
+                                Data="{StaticResource MenuItemExpandIconGlyph}"
+                                Foreground="{StaticResource Foreground-1-SolidColorBrush}" />
+						</Grid>
+					</Border>
+					<Popup
+                        Name="PART_Popup"
+                        HorizontalOffset="-8"
+                        IsLightDismissEnabled="False"
+                        IsOpen="{TemplateBinding IsSubMenuOpen,
+                                                 Mode=TwoWay}"
+                        Placement="RightEdgeAlignedTop"
+                        VerticalOffset="-4"
+                        WindowManagerAddShadowHint="False">
+						<Border
+                            MinWidth="96"
+                            MinHeight="16"
+                            MaxWidth="480"
+                            MaxHeight="300"
+                            Margin="8"
+                            Padding="8,0"
+                            HorizontalAlignment="Stretch"
+                            Background="{StaticResource Background-0-SolidColorBrush}"
+                            BorderBrush="RosyBrown"
+                            BorderThickness="1"
+                            BoxShadow="0 0 8 0 #1AFFFFFF"
+                            CornerRadius="5">
+							<ItemsPresenter Name="PART_ItemsPresenter"
+											Grid.IsSharedSizeScope="True"
+											ItemsPanel="{TemplateBinding ItemsPanel}" />
+						</Border>
+					</Popup>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:icon /template/ Viewbox#PART_IconPresenter">
+			<Setter Property="IsVisible" Value="True" />
+		</Style>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="Orange" />
+			</Style>
+		</Style>
+
+		<!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
+		<Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="Goldenrod" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="Blue" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
+				<Setter Property="Foreground" Value="Bisque" />
+			</Style>
+			<Style Selector="^ /template/ PathIcon#PART_ExpandIcon">
+				<Setter Property="Foreground" Value="SaddleBrown" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:open /template/ PathIcon#PART_ExpandIcon">
+			<Setter Property="Foreground" Value="Aqua" />
+		</Style>
+
+		<Style Selector="^:empty /template/ PathIcon#PART_ExpandIcon">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+		<Style Selector="^:separator">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Separator />
+				</ControlTemplate>
+			</Setter>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="TopLevelMenuItem" TargetType="{x:Type MenuItem}">
+		<Setter Property="Background" Value="{StaticResource Background-0-SolidColorBrush}" />
+		<Setter Property="Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
+		<Setter Property="MenuItem.Cursor" Value="Hand" />
+		<Setter Property="Padding" Value="0,8" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Name="PART_LayoutRoot"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+					<Panel>
+						<ContentPresenter Name="PART_HeaderPresenter"
+										  Margin="{TemplateBinding Padding}"
+										  HorizontalAlignment="Stretch"
+										  VerticalAlignment="Center"
+										  Content="{TemplateBinding Header}"
+										  RecognizesAccessKey="True" />
+						<Popup Name="PART_Popup"
+							   MinWidth="{Binding $parent[MenuItem].Bounds.Width}"
+							   HorizontalOffset="-8"
+							   IsLightDismissEnabled="True"
+							   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
+                               OverlayInputPassThroughElement="{Binding $parent[Menu]}"
+                               Placement="BottomEdgeAlignedLeft"
+                               VerticalOffset="-4"
+                               WindowManagerAddShadowHint="False">
+							<Border MinWidth="96"
+									MinHeight="16"
+									Margin="8"
+									Padding="0,8"
+									HorizontalAlignment="Stretch"
+									Background="{StaticResource Background-0-SolidColorBrush}"
+									BorderBrush="Green"
+									BorderThickness="1"
+									BoxShadow="0 0 8 0 #1AFFFFFF"
+									CornerRadius="5">
+								<ItemsPresenter Name="PART_ItemsPresenter"
+												Grid.IsSharedSizeScope="True"
+												ItemsPanel="{TemplateBinding ItemsPanel}" />
+							</Border>
+						</Popup>
+					</Panel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="Red" />
+			</Style>
+		</Style>
+
+		<!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
+		<Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="Orange" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="Blue" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>

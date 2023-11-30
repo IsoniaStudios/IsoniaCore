@@ -6,20 +6,20 @@
         <Setter Property="FlyoutPresenter.HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="FlyoutPresenter.VerticalContentAlignment" Value="Stretch" />
         <Setter Property="FlyoutPresenter.UseLayoutRounding" Value="False" />
-        <Setter Property="FlyoutPresenter.FontWeight" Value="{DynamicResource FlyoutFontWeight}" />
-        <Setter Property="FlyoutPresenter.Background" Value="{DynamicResource FlyoutBackground}" />
-        <Setter Property="FlyoutPresenter.BorderBrush" Value="{DynamicResource FlyoutBorderBrush}" />
-        <Setter Property="FlyoutPresenter.BorderThickness" Value="{DynamicResource FlyoutBorderThickness}" />
-        <Setter Property="FlyoutPresenter.Padding" Value="{DynamicResource FlyoutPadding}" />
-        <Setter Property="FlyoutPresenter.MinWidth" Value="{DynamicResource FlyoutMinWidth}" />
-        <Setter Property="FlyoutPresenter.MaxWidth" Value="{DynamicResource FlyoutMaxWidth}" />
-        <Setter Property="FlyoutPresenter.MinHeight" Value="{DynamicResource FlyoutMinHeight}" />
-        <Setter Property="FlyoutPresenter.MaxHeight" Value="{DynamicResource FlyoutMaxHeight}" />
-        <Setter Property="FlyoutPresenter.Foreground" Value="{DynamicResource FlyoutForeground}" />
+        <Setter Property="FlyoutPresenter.FontWeight" Value="400" />
+        <Setter Property="FlyoutPresenter.Background" Value="{StaticResource Background-0-SolidColorBrush}" />
+        <Setter Property="FlyoutPresenter.BorderBrush" Value="BlueViolet" />
+        <Setter Property="FlyoutPresenter.BorderThickness" Value="1" />
+        <Setter Property="FlyoutPresenter.Padding" Value="0,8" />
+        <Setter Property="FlyoutPresenter.MinWidth" Value="96" />
+        <Setter Property="FlyoutPresenter.MaxWidth" Value="480" />
+        <Setter Property="FlyoutPresenter.MinHeight" Value="480" />
+        <Setter Property="FlyoutPresenter.MaxHeight" Value="300" />
+        <Setter Property="FlyoutPresenter.Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
         <Setter Property="FlyoutPresenter.ClipToBounds" Value="False" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="FlyoutPresenter.CornerRadius" Value="{DynamicResource FlyoutCornerRadius}" />
+        <Setter Property="FlyoutPresenter.CornerRadius" Value="5" />
         <Setter Property="FlyoutPresenter.Template">
             <ControlTemplate TargetType="{x:Type FlyoutPresenter}">
                 <Border Name="LayoutRoot"
@@ -27,49 +27,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        BoxShadow="{DynamicResource FlyoutBorderBoxShadow}"
-                        ClipToBounds="False"
-                        CornerRadius="{TemplateBinding CornerRadius}"
-                        UseLayoutRounding="False">
-                    <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
-                        <ContentPresenter Margin="{TemplateBinding Padding}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalContentAlignment="Stretch"
-                                          VerticalContentAlignment="Stretch"
-                                          Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
-                    </ScrollViewer>
-                </Border>
-            </ControlTemplate>
-        </Setter>
-    </ControlTheme>
-
-    <ControlTheme x:Key="LightFlyout" TargetType="{x:Type FlyoutPresenter}">
-        <Setter Property="FlyoutPresenter.HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="FlyoutPresenter.VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="FlyoutPresenter.UseLayoutRounding" Value="False" />
-        <Setter Property="FlyoutPresenter.FontWeight" Value="{DynamicResource FlyoutFontWeight}" />
-        <Setter Property="FlyoutPresenter.Background" Value="Transparent" />
-        <Setter Property="FlyoutPresenter.BorderBrush" Value="Transparent" />
-        <Setter Property="FlyoutPresenter.BorderThickness" Value="0" />
-        <Setter Property="FlyoutPresenter.Padding" Value="{DynamicResource FlyoutPadding}" />
-        <Setter Property="FlyoutPresenter.MinWidth" Value="{DynamicResource FlyoutMinWidth}" />
-        <Setter Property="FlyoutPresenter.MaxWidth" Value="{DynamicResource FlyoutMaxWidth}" />
-        <Setter Property="FlyoutPresenter.MinHeight" Value="{DynamicResource FlyoutMinHeight}" />
-        <Setter Property="FlyoutPresenter.MaxHeight" Value="{DynamicResource FlyoutMaxHeight}" />
-        <Setter Property="FlyoutPresenter.Foreground" Value="{DynamicResource FlyoutForeground}" />
-        <Setter Property="FlyoutPresenter.ClipToBounds" Value="False" />
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="FlyoutPresenter.CornerRadius" Value="{DynamicResource FlyoutCornerRadius}" />
-        <Setter Property="FlyoutPresenter.Margin" Value="4" />
-        <Setter Property="FlyoutPresenter.Template">
-            <ControlTemplate TargetType="{x:Type FlyoutPresenter}">
-                <Border Name="LayoutRoot"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BoxShadow="0 0 8 0 #1AFFFFFF"
                         ClipToBounds="False"
                         CornerRadius="{TemplateBinding CornerRadius}"
                         UseLayoutRounding="False">
