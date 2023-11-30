@@ -17,12 +17,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.0.5" />
     <PackageReference Include="Avalonia.Desktop" Version="11.0.5" />
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AvaloniaXaml Update="Resources\Accents\Palette.axaml">
-      <SubType>Designer</SubType>
-    </AvaloniaXaml>
+	<PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.5" />
+	<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5" />
   </ItemGroup>
 </Project>
