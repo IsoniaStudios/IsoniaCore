@@ -14,7 +14,7 @@
 	<StackPanel Orientation="Horizontal">
 		<PathIcon Data="{Binding Icon, Mode=OneTime}"
 				  IsVisible="{Binding Icon, Mode=OneTime, Converter={StaticResource NullToFalseConverter}}"
-				  Margin="8"/>
+				  Margin="8" />
 		<TextBlock Theme="{StaticResource SubTitle}" Classes="H6" Text="{Binding Title, Mode=OneTime}" VerticalAlignment="Center" />
 	</StackPanel>
 
