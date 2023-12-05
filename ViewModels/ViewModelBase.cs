@@ -28,7 +28,7 @@ namespace IsoniaCore.ViewModels
         public StreamGeometry? Icon
         {
             get => icon;
-            set => OnPropertyChanged(ref icon, value);
+            protected set => OnPropertyChanged(ref icon, value);
         }
 
         public override string ToString()

@@ -21,5 +21,9 @@
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>
+	
+	<ControlTheme x:Key="MVVM" BasedOn="{StaticResource {x:Type Menu}}" TargetType="{x:Type Menu}">
+		<Setter Property="Menu.ItemContainerTheme" Value="{StaticResource TopLevel-MenuItem-MVVM}" />
+	</ControlTheme>
 
 </ResourceDictionary>
