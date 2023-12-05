@@ -3,35 +3,38 @@
                     x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type MenuFlyoutPresenter}" TargetType="{x:Type MenuFlyoutPresenter}">
-        <Setter Property="MenuFlyoutPresenter.Background" Value="{StaticResource Background-0-SolidColorBrush}" />
-        <Setter Property="MenuFlyoutPresenter.BorderBrush" Value="Gold" />
-        <Setter Property="MenuFlyoutPresenter.BorderThickness" Value="1" />
-        <Setter Property="MenuFlyoutPresenter.Padding" Value="0,8" />
-        <Setter Property="MenuFlyoutPresenter.FontSize" Value="14" />
-        <Setter Property="MenuFlyoutPresenter.FontWeight" Value="400" />
-        <Setter Property="MenuFlyoutPresenter.Foreground" Value="StaticResource Foreground-1-SolidColorBrush" />
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="MenuFlyoutPresenter.CornerRadius" Value="5" />
-        <Setter Property="MenuFlyoutPresenter.Template">
-            <ControlTemplate TargetType="{x:Type MenuFlyoutPresenter}">
-                <Border Name="LayoutRoot"
-                        Margin="4"
+		<Setter Property="MenuFlyoutPresenter.UseLayoutRounding" Value="False" />
+		<Setter Property="MenuFlyoutPresenter.FontWeight" Value="400" />
+		<Setter Property="MenuFlyoutPresenter.Background" Value="{StaticResource Background-0-SolidColorBrush}" />
+		<Setter Property="MenuFlyoutPresenter.BorderBrush" Value="{StaticResource Fill-2-SolidColorBrush}" />
+		<Setter Property="MenuFlyoutPresenter.BorderThickness" Value="1" />
+		<Setter Property="MenuFlyoutPresenter.Padding" Value="0,4" />
+		<Setter Property="MenuFlyoutPresenter.MinWidth" Value="96" />
+		<Setter Property="MenuFlyoutPresenter.MinHeight" Value="16" />
+		<Setter Property="MenuFlyoutPresenter.Foreground" Value="{StaticResource Foreground-1-SolidColorBrush}" />
+		<Setter Property="MenuFlyoutPresenter.ClipToBounds" Value="False" />
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="MenuFlyoutPresenter.CornerRadius" Value="4" />
+		<Setter Property="MenuFlyoutPresenter.Template">
+			<ControlTemplate TargetType="{x:Type MenuFlyoutPresenter}">
+				<Border Name="LayoutRoot"
+                        Margin="0,4"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        BoxShadow="0 0 8 0 #1AFFFFFF"
+                        BoxShadow="0 0 0 0 #00000000"
                         ClipToBounds="False"
                         CornerRadius="{TemplateBinding CornerRadius}"
                         UseLayoutRounding="False">
-                    <ItemsPresenter Name="PART_ItemsPresenter"
-                                    Margin="{TemplateBinding Padding}"
-                                    Grid.IsSharedSizeScope="True"
-                                    ItemsPanel="{TemplateBinding ItemsPanel}"
-                                    KeyboardNavigation.TabNavigation="Continue" />
-                </Border>
-            </ControlTemplate>
-        </Setter>
+					<ItemsPresenter Name="PART_ItemsPresenter"
+									Margin="{TemplateBinding Padding}"
+									Grid.IsSharedSizeScope="True"
+									ItemsPanel="{TemplateBinding ItemsPanel}"
+									KeyboardNavigation.TabNavigation="Continue" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
     </ControlTheme>
 	
 </ResourceDictionary>

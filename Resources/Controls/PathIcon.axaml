@@ -6,20 +6,32 @@
 	<x:Double x:Key="IconElementWidth">20</x:Double>
 
 	<ControlTheme x:Key="{x:Type PathIcon}" TargetType="{x:Type PathIcon}">
-        <Setter Property="PathIcon.Background" Value="Transparent" />
-        <Setter Property="PathIcon.Height" Value="{StaticResource IconElementHeight}" />
-        <Setter Property="PathIcon.Width" Value="{StaticResource IconElementWidth}" />
-        <Setter Property="Template">
-            <ControlTemplate TargetType="{x:Type PathIcon}">
-                <Border Background="{TemplateBinding Background}">
-                    <Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                        <Path Data="{TemplateBinding Data}"
+		<Setter Property="PathIcon.Height" Value="{StaticResource IconElementHeight}" />
+		<Setter Property="PathIcon.Width" Value="{StaticResource IconElementWidth}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="{x:Type PathIcon}">
+				<Border Background="{TemplateBinding Background}">
+					<Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+						<Path Data="{TemplateBinding Data}"
                               Fill="{TemplateBinding Foreground}"
                               Stretch="Uniform" />
-                    </Viewbox>
-                </Border>
-            </ControlTemplate>
-        </Setter>
-    </ControlTheme>
-	
+					</Viewbox>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="SizeToIcon" TargetType="{x:Type PathIcon}">
+		<Setter Property="PathIcon.Background" Value="Transparent" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="{x:Type PathIcon}">
+				<Border Background="{TemplateBinding Background}">
+					<Path Data="{TemplateBinding Data}"
+                          Fill="{TemplateBinding Foreground}"
+                          Stretch="Uniform" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
 </ResourceDictionary>

@@ -3,11 +3,11 @@
                     x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type Separator}" TargetType="{x:Type Separator}">
-		<Setter Property="Separator.Background" Value="Red" />
+		<Setter Property="Separator.Background" Value="{StaticResource Fill-2-SolidColorBrush}" />
 		<Setter Property="Separator.Focusable" Value="False" />
 		<Setter Property="Separator.HorizontalAlignment" Value="Stretch" />
 		<Setter Property="Separator.Height" Value="1" />
-		<Setter Property="Separator.Margin" Value="2" />
+		<Setter Property="Separator.Margin" Value="8,2" />
 		<Setter Property="Separator.Template">
 			<ControlTemplate TargetType="{x:Type Separator}">
 				<Border Height="{TemplateBinding Height}"
