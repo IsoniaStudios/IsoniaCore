@@ -1,5 +1,4 @@
 using System.Globalization;
-using Avalonia.Data.Converters;
 
 namespace IsoniaCore.Resources.Converters;
 
@@ -11,10 +10,5 @@ public sealed class DateTimeToRelativeStringConverter : TimeToStringConverter
             return "Invalid Date";
 
         return base.Convert(dateTime, targetType, parameter, culture);
-    }
-
-    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        throw new NotImplementedException();
     }
 }
