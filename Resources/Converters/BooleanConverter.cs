@@ -11,8 +11,8 @@ public class BooleanConverter<T> : IValueConverter
         False = falseValue;
     }
 
-    public T True { get; set; }
-    public T False { get; set; }
+    protected readonly T True;
+    protected readonly T False;
 
     public virtual object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
