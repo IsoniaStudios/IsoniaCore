@@ -91,7 +91,7 @@ namespace IsoniaCore.Native.PolyFills
             if (platformHandle == null)
                 return;
 #if WINDOWS
-            WinApi.Isonia_DestroyIsoniaWindow(platformHandle.Handle);
+            WinApi.DestroyIsoniaWindow(platformHandle.Handle);
 #else
             ((INativeControlHostDestroyableControlHandle)platformHandle).Destroy();
 #endif

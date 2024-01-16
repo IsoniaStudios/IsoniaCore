@@ -7,6 +7,11 @@ namespace IsoniaCore.Native.Visuals
 {
     public class NativeEmbeddingControl : NativeControlHost
     {
+        public NativeEmbeddingControl(IPlatformHandle? handle)
+        {
+            Handle = handle;
+        }
+
         public IPlatformHandle? Handle
         {
             get => GetValue(HandleProperty);
