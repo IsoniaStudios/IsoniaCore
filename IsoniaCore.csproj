@@ -20,4 +20,10 @@
 	<PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.5" />
 	<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Controls\Dock\DockControl.axaml.cs">
+      <DependentUpon>DockControl.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:local="clr-namespace:IsoniaCore.Resources.Controls.Dock"
+
+			 mc:Ignorable="d" d:DesignWidth="144"
+		
+ 			 x:Class="IsoniaCore.Resources.Controls.Dock.DockControl"
+			 x:CompileBindings="False">
+
+	<Grid RowDefinitions="17, *">
+		<Border BorderBrush="{StaticResource Fill-1-SolidColorBrush}"
+				BorderThickness="0,0,0,1">
+			
+		</Border>
+		<ContentPresenter Content="{Binding $self.DataContext}"
+						  Background="{StaticResource Background-1-SolidColorBrush}"
+						  Grid.Row="1"/>
+	</Grid>
+
+</UserControl>
