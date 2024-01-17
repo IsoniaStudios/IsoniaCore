@@ -5,15 +5,16 @@ namespace IsoniaCore.Native.PolyFills
 {
     public static unsafe class WinApi
     {
-        private const string libPath = "C:\\Source\\IsoniaStudios\\Isonia\\out\\build\\x64-debug\\Isonia\\Isonia.dll";
+        private const string dllPath = "Isonia.dll";
+        private const string pdbPath = "Isonia.pdb";
 
-        [DllImport(libPath, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(dllPath, CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
         public static extern IntPtr CreateIsoniaWindow();
 
-        [DllImport(libPath, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(dllPath, CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
         public static extern void DestroyIsoniaWindow(IntPtr windowHandle);
 
-        [DllImport(libPath, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(dllPath, CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
         public static extern void Run();
     }
 }

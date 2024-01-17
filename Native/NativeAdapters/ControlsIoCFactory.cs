@@ -1,5 +1,4 @@
 ﻿using Avalonia.Platform;
-using IsoniaCore.Native.PolyFills;
 
 namespace IsoniaCore.Native.NativeAdapters
 {

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IsoniaCore": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
